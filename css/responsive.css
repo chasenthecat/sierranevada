@@ -1,4 +1,4 @@
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 660px) {
   header {
     padding: 26px 50px;
   }
@@ -12,6 +12,10 @@
     display: flex;
     gap: 40px;
     align-items: center;
+  }
+
+  .hero img {
+    width: 80%;
   }
 
   #section-b {

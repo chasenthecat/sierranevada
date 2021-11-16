@@ -10,8 +10,9 @@
   --brand-700: #3aa481;
   --brand-800: #25846e;
   --brand-900: #166d62;
-  --dark-gray: #666666;
   --gray: #c4c4c4;
+  --light-gray: #f3f3f3;
+  --dark-gray: #666666;
 }
 
 ::selection {
@@ -56,18 +57,30 @@ footer div {
   align-items: stretch;
 }
 
+a {
+  text-decoration: none;
+}
+
 nav a,
 p {
-  text-decoration: none;
   color: var(--dark-gray);
   font-size: 16px;
+}
+
+p a {
+  color: var(--brand-500);
+}
+
+p a:hover {
+  color: var(--brand-600);
 }
 
 nav a:hover {
   color: black;
 }
 
-b {
+b,
+p a {
   font-weight: 500;
 }
 
@@ -99,23 +112,38 @@ img {
 
 section {
   margin-top: 60px;
+  gap: 40px;
 }
 
 footer {
-  color: var(--gray);
-  font-weight: 400;
-  padding: 80px 0px;
+  color: var(--dark-gray);
+  padding: 150px 0px;
   border-style: solid;
-  border-width: 0.5px 0px 0px 0px;
+  border-color: var(--gray);
+  border-width: 0.2px 0px 0px 0px;
   text-align: center;
 }
 
 footer div {
-  font-size: 22px;
+  font-size: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 15px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0px;
+  border-radius: 5px;
+  border: 1px solid var(--gray);
+  transition: 0.3s;
+  background-color: var(--light-gray);
+}
+
+label {
+  margin-bottom: 8px;
 }
 
 .text-sm {
@@ -125,6 +153,7 @@ footer div {
   margin-bottom: 20px;
 }
 
+button,
 .button {
   display: inline-block;
   font-weight: 400;
@@ -138,16 +167,20 @@ footer div {
   color: white;
   background-color: var(--brand-500);
   border-radius: 8px;
-  box-shadow: 0 4px 8px 0 var(--brand-200);
+  box-shadow: 0 2px 10px 0 var(--brand-200);
+  cursor: pointer;
 }
 
-.button:hover {
+.button:hover,
+button:hover {
   background-color: var(--brand-400);
 }
 
-.button:focus {
-  border: 1px solid var(--brand-200);
-  outline: 1px solid var(--brand-600);
+.button:focus,
+button:focus,
+form input:focus {
+  border: 1px solid var(--brand-600);
+  outline: 1px solid var(--brand-200);
 }
 
 .hero {
@@ -168,8 +201,8 @@ footer div {
 }
 
 #footer-logo {
-  width: 40px;
-  fill: var(--gray);
+  width: 20px;
+  fill: var(--dark-gray);
   fill-rule: evenodd;
   clip-rule: evenodd;
   stroke-linejoin: round;

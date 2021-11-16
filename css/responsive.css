@@ -1,0 +1,59 @@
+@media only screen and (min-width: 600px) {
+  header {
+    padding: 26px 50px;
+  }
+
+  main {
+    margin: 50px;
+  }
+
+  .hero,
+  section {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+  }
+
+  #section-b {
+    flex-direction: row-reverse;
+  }
+
+  #section-b img {
+    width: 70%;
+  }
+
+  #soon {
+    display: block;
+    margin: 150px 0px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  header {
+    padding: 26px 100px;
+  }
+
+  main {
+    margin: 0px 100px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  header {
+    padding: 26px 200px;
+  }
+
+  main {
+    margin: 0px 200px;
+  }
+
+  h1 {
+    margin: 20px 0px;
+    font-size: 60px;
+  }
+
+  h2 {
+    margin: 20px 0px;
+    font-size: 48px;
+  }
+}

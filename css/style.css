@@ -1,0 +1,177 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+
+:root {
+  --brand-100: #e4fde6;
+  --brand-200: #cbfcd3;
+  --brand-300: #aef7c1;
+  --brand-400: #97efb7;
+  --brand-500: #75e5a9;
+  --brand-600: #55c494;
+  --brand-700: #3aa481;
+  --brand-800: #25846e;
+  --brand-900: #166d62;
+  --dark-gray: #666666;
+  --gray: #c4c4c4;
+}
+
+::selection {
+  background-color: var(--brand-400);
+  color: black;
+}
+
+html,
+button {
+  font-family: Inter, sans-serif;
+  font-weight: 300;
+  margin: 0;
+  -webkit-font-smoothing: antialised;
+  direction: ltr;
+  font-feature-settings: "kern";
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+}
+
+#logo {
+  margin: 0;
+  width: 40px;
+}
+
+main {
+  margin: 26px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: auto;
+  margin: 0;
+  padding: 26px 26px;
+}
+
+nav,
+footer div {
+  display: inline-flex;
+  gap: 14px;
+  align-items: stretch;
+}
+
+nav a,
+p {
+  text-decoration: none;
+  color: var(--dark-gray);
+  font-size: 16px;
+}
+
+nav a:hover {
+  color: black;
+}
+
+b {
+  font-weight: 500;
+}
+
+p {
+  margin-top: 24px;
+  line-height: 2;
+  letter-spacing: -0.02em;
+}
+
+h1,
+h2 {
+  margin: 0;
+}
+
+h1 {
+  font-size: 48px;
+}
+
+h2 {
+  font-size: 36px;
+}
+
+img {
+  margin-top: 60px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+section {
+  margin-top: 60px;
+}
+
+footer {
+  color: var(--gray);
+  font-weight: 400;
+  padding: 80px 0px;
+  border-style: solid;
+  border-width: 0.5px 0px 0px 0px;
+  text-align: center;
+}
+
+footer div {
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.text-sm {
+  font-size: 14px;
+  color: var(--brand-500);
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.button {
+  display: inline-block;
+  font-weight: 400;
+  text-decoration: none;
+  margin-top: 24px;
+  font-size: 16px;
+  border: none;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 35px;
+  color: white;
+  background-color: var(--brand-500);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 0 var(--brand-200);
+}
+
+.button:hover {
+  background-color: var(--brand-400);
+}
+
+.button:focus {
+  border: 1px solid var(--brand-200);
+  outline: 1px solid var(--brand-600);
+}
+
+.hero {
+  display: block;
+}
+
+#soon {
+  margin: 80px 0px;
+  text-align: center;
+}
+
+#soon h2 {
+  margin-bottom: 20px;
+}
+
+#soon button {
+  margin: 0 auto;
+}
+
+#footer-logo {
+  width: 40px;
+  fill: var(--gray);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+  stroke-linejoin: round;
+  stroke-miterlimit: 2;
+}

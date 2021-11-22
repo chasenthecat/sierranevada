@@ -62,7 +62,7 @@
 
 ::selection {
   background-color: var(--brand-400);
-  color: black;
+  color: --gray-900;
 }
 
 html,
@@ -108,7 +108,7 @@ a {
 
 nav a,
 p {
-  color: var(--dark-gray);
+  color: var(--gray-400);
   font-size: 16px;
 }
 
@@ -121,7 +121,7 @@ p a:hover {
 }
 
 nav a:hover {
-  color: black;
+  color: var(--gray-900);
 }
 
 b,
@@ -138,6 +138,7 @@ p {
 h1,
 h2 {
   margin: 0;
+  color: var(--gray-900);
 }
 
 h1 {
@@ -161,10 +162,10 @@ section {
 }
 
 footer {
-  color: var(--dark-gray);
+  color: var(--gray-600);
   padding: 150px 0px;
   border-style: solid;
-  border-color: var(--gray);
+  border-color: var(--gray-300);
   border-width: 0.2px 0px 0px 0px;
   text-align: center;
 }
@@ -182,9 +183,9 @@ input {
   padding: 10px;
   margin: 10px 0px;
   border-radius: 5px;
-  border: 1px solid var(--gray);
+  border: 1px solid var(--gray-300);
   transition: 0.3s;
-  background-color: var(--light-gray);
+  background-color: var(--gray-100);
 }
 
 label {
@@ -247,7 +248,7 @@ form input:focus {
 
 #footer-logo {
   width: 20px;
-  fill: var(--dark-gray);
+  fill: var(--gray-600);
   fill-rule: evenodd;
   clip-rule: evenodd;
   stroke-linejoin: round;

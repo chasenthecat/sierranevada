@@ -20,10 +20,6 @@ footer {
   background: var(--gray-50);
 }
 
-main {
-  height: calc(100vh - 130px);
-}
-
 nav {
   display: flex;
   justify-content: space-between;

@@ -21,6 +21,8 @@ th {
 
 th,
 td {
+  display: flex-column;
+  flex-grow: 1;
   padding: 10px 20px 10px 0px;
   overflow: hidden;
   white-space: nowrap;

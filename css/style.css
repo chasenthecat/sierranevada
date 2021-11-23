@@ -60,6 +60,10 @@
   --gray-900: #060716;
 }
 
+.dark_mode {
+  background-color: var(--gray-900);
+  color: var(--gray-100);
+}
 ::selection {
   background-color: var(--brand-400);
   color: --gray-900;

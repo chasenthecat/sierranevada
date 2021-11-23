@@ -64,13 +64,15 @@
   --background-main: var(--gray-100);
   --logo: var(--gray-900);
   --dark-logo: url(../static/wi_solar-eclipse.svg);
+  --main-logo: url(../static/logo.svg);
+  --footer-color: var(--gray-400);
 }
 
 
 * {
   margin: 0;
   padding: 0;
-  color: var(--gray-900);
+  color: var(--text-color-ap);
 }
 
 html,
@@ -99,7 +101,9 @@ button {
 }
 #logo {
   margin: 0;
+  height: 40px;
   width: 40px;
+  background-image: var(--main-logo);
 }
 
 main {
@@ -183,7 +187,7 @@ section {
 }
 
 footer {
-  color: var(--gray-600);
+  color: var(--footer-color);
   padding: 150px 0px;
   border-style: solid;
   border-color: var(--gray-300);
@@ -269,7 +273,7 @@ form input:focus {
 
 #footer-logo {
   width: 20px;
-  fill: var(--gray-600);
+  fill: var(--footer-color) ;
   fill-rule: evenodd;
   clip-rule: evenodd;
   stroke-linejoin: round;

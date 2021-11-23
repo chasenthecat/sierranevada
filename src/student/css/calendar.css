@@ -15,7 +15,7 @@
 ul {
   list-style-type: none;
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(7, 40px);
   grid-template-rows: repeat(5, 1fr);
 }
 
@@ -26,6 +26,6 @@ ul li {
 }
 
 .active {
-  background-color: var(--brand-500);
+  background-color: var(--brand-600);
   color: white;
 }

@@ -1,6 +1,6 @@
 const themeToggler = document.querySelector("#theme-toggler");
 
-themeToggler.addEventListener("click", function () {
+themeToggler.addEventListener("click", () => {
   document.body.classList.toggle("dark-mode");
   if (document.body.classList.contains("dark-mode")) {
     localStorage.setItem("websiteTheme", "dark-mode");
@@ -19,10 +19,4 @@ const retrieveTheme = () => {
 
 retrieveTheme();
 
-window.addEventListener(
-  "storage",
-  () => {
-    retrieveTheme();
-  },
-  false
-);
+window.addEventListener("storage", () => retrieveTheme(), false);

@@ -56,17 +56,22 @@
   --gray-700: #111221;
   --gray-800: #0a0b1a;
   --gray-900: #060716;
-  --button-bg: var(--brand-500);
-  --button-bg-hover: var(--brand-400);
+  --button-bg: var(--brand-600);
+  --button-bg-hover: var(--brand-500);
   --button-border: var(--brand-600);
   --button-shadow: var(--brand-400);
   --text-color-h: var(--gray-900);
-  --text-color-ap: var(--gray-900);
+  --text-color-ap: var(--gray-400);
+  --text-color-hover: var(--gray-900);
   --background-main: white;
   --logo: var(--gray-900);
   --dark-logo: url(../static/ic_lunar-dark-mode.svg);
   --main-logo: url(../static/logo.svg);
   --footer-color: var(--gray-400);
+}
+::selection {
+  background-color: var(--brand-400);
+  color: --gray-900;
 }
 
 * {
@@ -147,7 +152,7 @@ p a:hover {
 }
 
 nav a:hover {
-  color: var(--gray-900);
+  color: var(--text-color-hover);
 }
 
 b,
@@ -176,6 +181,7 @@ h2 {
 }
 
 img {
+  margin-top: 60px;
   margin-left: auto;
   margin-right: auto;
   width: 100%;

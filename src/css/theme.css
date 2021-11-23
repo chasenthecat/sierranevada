@@ -1,0 +1,4 @@
+.dark-mode {
+  background-color: var(--gray-500);
+  color: white;
+}

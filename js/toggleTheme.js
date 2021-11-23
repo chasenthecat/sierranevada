@@ -1,5 +1,5 @@
-let theme_toggler = document.querySelector('#theme_toggler');
+let toggleTheme = document.querySelector("#theme-toggler");
 
-theme_toggler.addEventListener('click', function(){ 
-    document.body.classList.toggle('dark_mode');
+toggleTheme.addEventListener("click", () => {
+  document.body.classList.toggle("dark_mode");
 });

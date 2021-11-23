@@ -1,23 +1,46 @@
 .container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-items: center;
 }
 
 .content{
 	width: 300px;
 	position: relative;
     margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .content select{
 	display: inline-block;
 	cursor: pointer;
     transition: all 0.25s ease;
+    margin: 0;
+    padding: 0;
+    height: 40px;
 }
 
 .content input{
     display: inline-block;
+    margin: 0;
+    padding: 0;
+    height: 35px;
+}
+
+.container {
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+    display: grid; 
+    grid-auto-columns: 1fr; 
+    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-rows: 1fr; 
+    gap: 10px 10px; 
+    grid-template-areas: 
+      ". . ."; 
+  }
+
+.container button{
+    margin: 0;
 }
 
 #logo-login{
@@ -27,9 +50,5 @@
 @media only screen and (max-width: 660px){
     .content{
         width: 100%;
-    }
-
-    .content input{
-        width: 93%;
     }
 }

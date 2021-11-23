@@ -63,7 +63,8 @@
   --text-color-ap: var(--gray-400);
   --background-main: var(--gray-100);
   --logo: var(--gray-900);
-  --dark-logo: url(../static/wi_solar-eclipse.svg);
+  --dark-logo: url(../static/ic_lunar-dark-mode.svg);
+  
   --main-logo: url(../static/logo.svg);
   --footer-color: var(--gray-400);
 }
@@ -281,7 +282,10 @@ form input:focus {
 }
 button#theme-toggler {
   margin-top: 0px;
+  box-shadow: none;
+  background-color:var(--background-main);
 }
+button#theme-toggler:focus ,
 button#theme-toggler:hover {
   border: none;
   outline: none;

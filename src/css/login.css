@@ -1,0 +1,35 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content{
+	width: 300px;
+	position: relative;
+    margin-top: 20px;
+}
+
+.content select{
+	display: inline-block;
+	cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.content input{
+    display: inline-block;
+}
+
+#logo-login{
+    width: 10%;
+}
+
+@media only screen and (max-width: 660px){
+    .content{
+        width: 100%;
+    }
+
+    .content input{
+        width: 93%;
+    }
+}

@@ -4,4 +4,5 @@
   --background-principal: var(--gray-900);
   --logo: var(--gray-100);
   background-color: var(--background-principal);
+  --dark-logo: url(../static/ic_lunar-dark-mode.svg);
 }

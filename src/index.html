@@ -42,27 +42,37 @@
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/responsive.css" />
     <link rel="stylesheet" href="./css/theme.css" />
+    <link rel="stylesheet" href="./css/navbar.css"/>
   </head>
   <body>
     <header>
-      <a href="./index.html">
-        <div  id="logo"></div>
-        
-      </a>
-      <div class="group">
-        <button id="theme-toggler">
-          <div  class="dark-img"></div>
-        </button>
-        <nav>
-          <a href="./login.html">Iniciar Sesión</a>
-          <a href="./plans.html">Planes</a>
-          <a href="./contact.html">Contacto</a>
-        </nav>
-      </div>
+      <nav class="navbar">
+        <a href="./index.html">
+          <div id="logo"></div>
+        </a>
+        <div class="group">
+          <button id="theme-toggler">
+            <div  class="dark-img"></div>
+          </button>
+          <ul class="nav-menu">
+            <li class="nav-item">
+              <a href="./login.html">Iniciar Sesión</a>
+            <li class="nav-item">
+              <a href="#">Planes</a>
+            </li>
+            <li class="nav-item">
+              <a href="#">Contacto</a>
+            </li>
+          </ul>
+          <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+        </div>
     </header>
     <main>
-      
-      
+  
       <div class="hero">
         <div>
           <h1>Redefine la educación virtual.</h1>
@@ -117,6 +127,7 @@
       </div>
       &copy; 2021
     </footer>
+    <script src="./js/navbar.js"></script>
     <script src="./js/toggleTheme.js"></script>
   </body>
 </html>

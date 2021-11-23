@@ -37,10 +37,10 @@
     />
     <meta name="msapplication-TileColor" content="#da532c" />
     <meta name="theme-color" content="#ffffff" />
-    <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/responsive.css" />
     <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/normalize.css" />
     <title>Iniciar Sesión en Sierra Nevada</title>
   </head>
   <body>
@@ -49,19 +49,25 @@
         <a href="./index.html">
           <img src="./static/logo.svg" alt="Ir al inicio" id="logo" />
         </a>
-        <ul class="nav-menu">
-          <li class="nav-item">
-            <a href="#">Planes</a>
-          </li>
-          <li class="nav-item">
-            <a href="#">Contacto</a>
-          </li>
-        </ul>
-        <div class="hamburger">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
+        <div class="group">
+          <button id="theme-toggler">
+            <div  class="dark-img"></div>
+          </button>
+          <ul class="nav-menu">
+            <li class="nav-item">
+              <a href="#">Planes</a>
+            </li>
+            <li class="nav-item">
+              <a href="#">Contacto</a>
+            </li>
+          </ul>
+          <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
         </div>
+        
       </nav>
     </header>
     <main>
@@ -73,5 +79,6 @@
       <a class="button" href="./contact.html">Iniciar Sesión</a>
     </main>
     <script src="./js/navbar.js"></script>
+    <script src="./js/toggleTheme.js"></script>
   </body>
 </html>

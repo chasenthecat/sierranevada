@@ -92,7 +92,8 @@ button {
 
 .group{
   display: flex;
-  gap:10px
+  gap:10px;
+  align-items: center;
 }
 .dark-img{
   background: var(--dark-logo);
@@ -105,6 +106,7 @@ button {
   height: 40px;
   width: 40px;
   background-image: var(--main-logo);
+  background-repeat: no-repeat;
 }
 
 main {
@@ -282,6 +284,7 @@ form input:focus {
 }
 button#theme-toggler {
   margin-top: 0px;
+  padding: 3px;
   box-shadow: none;
   background-color:var(--background-main);
 }

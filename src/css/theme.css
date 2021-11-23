@@ -1,5 +1,7 @@
 .dark-mode {
   --text-color-ap: var(--gray-300);
   --text-color-h: var(--gray-100);
-  --background-principal: var(--gray-100);
+  --background-principal: var(--gray-900);
+  --logo: var(--gray-100);
+  background-color: var(--background-principal);
 }

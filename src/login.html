@@ -41,13 +41,14 @@
     <link rel="stylesheet" href="css/responsive.css" />
     <link rel="stylesheet" href="css/navbar.css" />
     <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/theme.css">
     <title>Iniciar Sesión en Sierra Nevada</title>
   </head>
   <body>
     <header class="header">
       <nav class="navbar">
         <a href="./index.html">
-          <img src="./static/logo.svg" alt="Ir al inicio" id="logo" />
+          <div id="logo"></div>
         </a>
         <div class="group">
           <button id="theme-toggler">
@@ -55,10 +56,12 @@
           </button>
           <ul class="nav-menu">
             <li class="nav-item">
-              <a href="#">Planes</a>
+              <a href="./login.html">Iniciar Sesión</a>
+            <li class="nav-item">
+              <a href="plans.html">Planes</a>
             </li>
             <li class="nav-item">
-              <a href="#">Contacto</a>
+              <a href="contact.html">Contacto</a>
             </li>
           </ul>
           <div class="hamburger">
@@ -67,7 +70,6 @@
             <span class="bar"></span>
           </div>
         </div>
-        
       </nav>
     </header>
     <main>
@@ -78,7 +80,7 @@
       </p>
       <a class="button" href="./contact.html">Iniciar Sesión</a>
     </main>
-    <script src="./js/navbar.js"></script>
     <script src="./js/toggleTheme.js"></script>
+    <script src="./js/navbar.js"></script>
   </body>
 </html>

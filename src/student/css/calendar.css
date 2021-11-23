@@ -26,6 +26,6 @@ ul li {
 }
 
 .active {
-  background-color: var(--brand-500);
+  background-color: var(--brand-600);
   color: white;
 }

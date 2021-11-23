@@ -73,13 +73,11 @@
     </header>
     <main>
       <h1 class="text-center">Iniciar Sesión</h1>
-      <svg id="logo-login" viewBox="0 0 331 335">
-        <path
-          d="M330.472 335 165.263.553.054 335h330.418ZM215.344 139.568l88.306 178.765H26.876l88.306-178.765h100.162Zm-91.929-16.667h83.696l-41.848-84.716-41.848 84.716Z"
-        />
-      </svg>
+      <div class="center-flex">
+        <div id="logo""></div>
+      </div>
       <form action="#" method="">
-        <div class="contaiener">
+        <div>
           <div class="content">
             <label for="ie">Nombre de su IE</label>
             <select name="select" id="ie">
@@ -106,7 +104,11 @@
             <label for="pass">Contraseña</label>
             <input type="text" id="pass">
           </div>
-          <button type="submit" class="button">Iniciar Sesión</button>
+          <div class="container">
+            <div><input type="checkbox">Recuerdame</div>
+            <div><button type="submit" class="button">Iniciar Sesión</button></div>
+            <div><a href="#">Necesitas Ayuda?</a></div>
+          </div>
         </div>
       </form>
     </main>

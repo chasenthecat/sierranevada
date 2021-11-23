@@ -1,0 +1,260 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+
+:root {
+  --brand-100: #e4fde6;
+  --brand-200: #cbfcd3;
+  --brand-300: #aef7c1;
+  --brand-400: #97efb7;
+  --brand-500: #75e5a9;
+  --brand-600: #55c494;
+  --brand-700: #3aa481;
+  --brand-800: #25846e;
+  --brand-900: #166d62;
+  --color-success-100: #edfbd6;
+  --color-success-200: #d8f8af;
+  --color-success-300: #b8ec83;
+  --color-success-400: #96d960;
+  --color-success-500: #69c132;
+  --color-success-600: #4ea524;
+  --color-success-700: #378a19;
+  --color-success-800: #236f0f;
+  --color-success-900: #155c09;
+  --color-info-100: #d2e7ff;
+  --color-info-200: #a6ccff;
+  --color-info-300: #79afff;
+  --color-info-400: #5895ff;
+  --color-info-500: #216bff;
+  --color-info-600: #1852db;
+  --color-info-700: #103cb7;
+  --color-info-800: #0a2a93;
+  --color-info-900: #061d7a;
+  --color-warning-100: #fff3d2;
+  --color-warning-200: #ffe4a4;
+  --color-warning-300: #ffd278;
+  --color-warning-400: #ffbf56;
+  --color-warning-500: #ffa11e;
+  --color-warning-600: #db8015;
+  --color-warning-700: #b7620f;
+  --color-warning-800: #934809;
+  --color-warning-900: #7a3505;
+  --color-danger-100: #ffe2dd;
+  --color-danger-200: #ffbfbb;
+  --color-danger-300: #ff999d;
+  --color-danger-400: #ff8091;
+  --color-danger-500: #ff567d;
+  --color-danger-600: #db3e71;
+  --color-danger-700: #b72b66;
+  --color-danger-800: #931b59;
+  --color-danger-900: #7a1051;
+  --gray: #c4c4c4;
+  --light-gray: #f3f3f3;
+  --dark-gray: #666666;
+  --gray-100: #e7e9f4;
+  --gray-200: #d1d4ea;
+  --gray-300: #a2a5c0;
+  --gray-400: #686a81;
+  --gray-500: #22232e;
+  --gray-600: #181927;
+  --gray-700: #111221;
+  --gray-800: #0a0b1a;
+  --gray-900: #060716;
+}
+
+.dark_mode {
+  background-color: var(--gray-900);
+  color: var(--gray-100);
+}
+::selection {
+  background-color: var(--brand-400);
+  color: --gray-900;
+}
+
+html,
+button {
+  font-family: Inter, sans-serif;
+  font-weight: 300;
+  margin: 0;
+  -webkit-font-smoothing: antialised;
+  direction: ltr;
+  font-feature-settings: "kern";
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+}
+
+#logo {
+  margin: 0;
+  width: 40px;
+}
+
+main {
+  margin: 26px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: auto;
+  margin: 0;
+  padding: 26px 26px;
+}
+
+nav,
+footer div {
+  display: inline-flex;
+  gap: 14px;
+  align-items: stretch;
+}
+
+a {
+  text-decoration: none;
+}
+
+nav a,
+p {
+  color: var(--gray-400);
+  font-size: 16px;
+}
+
+p a {
+  color: var(--brand-500);
+}
+
+p a:hover {
+  color: var(--brand-600);
+}
+
+nav a:hover {
+  color: var(--gray-900);
+}
+
+b,
+p a {
+  font-weight: 500;
+}
+
+p {
+  margin-top: 24px;
+  line-height: 2;
+  letter-spacing: -0.02em;
+}
+
+h1,
+h2 {
+  margin: 0;
+  color: var(--gray-900);
+}
+
+h1 {
+  font-size: 48px;
+}
+
+h2 {
+  font-size: 36px;
+}
+
+img {
+  margin-top: 60px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+section {
+  margin-top: 60px;
+  gap: 40px;
+}
+
+footer {
+  color: var(--gray-600);
+  padding: 150px 0px;
+  border-style: solid;
+  border-color: var(--gray-300);
+  border-width: 0.2px 0px 0px 0px;
+  text-align: center;
+}
+
+footer div {
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0px;
+  border-radius: 5px;
+  border: 1px solid var(--gray-300);
+  transition: 0.3s;
+  background-color: var(--gray-100);
+}
+
+label {
+  margin-bottom: 8px;
+}
+
+.text-sm {
+  font-size: 14px;
+  color: var(--brand-500);
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+button,
+.button {
+  display: inline-block;
+  font-weight: 400;
+  text-decoration: none;
+  margin-top: 24px;
+  font-size: 16px;
+  border: none;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 35px;
+  color: white;
+  background-color: var(--brand-500);
+  border-radius: 8px;
+  box-shadow: 0 2px 10px 0 var(--brand-200);
+  cursor: pointer;
+}
+
+.button:hover,
+button:hover {
+  background-color: var(--brand-400);
+}
+
+.button:focus,
+button:focus,
+form input:focus {
+  border: 1px solid var(--brand-600);
+  outline: 1px solid var(--brand-200);
+}
+
+.hero {
+  display: block;
+}
+
+#soon {
+  margin: 80px 0px;
+  text-align: center;
+}
+
+#soon h2 {
+  margin-bottom: 20px;
+}
+
+#soon button {
+  margin: 0 auto;
+}
+
+#footer-logo {
+  width: 20px;
+  fill: var(--gray-600);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+  stroke-linejoin: round;
+  stroke-miterlimit: 2;
+}

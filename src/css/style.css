@@ -55,6 +55,7 @@
   --gray-700: #111221;
   --gray-800: #0a0b1a;
   --gray-900: #060716;
+  --background: var(--gray-100);
 }
 
 ::selection {

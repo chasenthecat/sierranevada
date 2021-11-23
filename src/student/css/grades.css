@@ -1,0 +1,8 @@
+main,
+footer {
+  background: white !important;
+}
+
+.warn {
+  color: var(--danger-500);
+}

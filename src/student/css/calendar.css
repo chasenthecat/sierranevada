@@ -1,0 +1,31 @@
+#calendar {
+  margin: 24px 0px;
+}
+
+#calendar h2 {
+  margin-bottom: 12px;
+}
+
+#calendar h2,
+.weekdays li {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+ul {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+}
+
+ul li {
+  text-align: center;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.active {
+  background-color: var(--brand-500);
+  color: white;
+}

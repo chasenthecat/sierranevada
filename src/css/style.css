@@ -46,6 +46,7 @@
   --danger-700: #b72b66;
   --danger-800: #931b59;
   --danger-900: #7a1051;
+  --gray-50: #f8f8f8;
   --gray-100: #e7e9f4;
   --gray-200: #d1d4ea;
   --gray-300: #a2a5c0;
@@ -68,6 +69,12 @@
   color: var(--gray-900);
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  color: var(--gray-900);
+}
+
 html,
 button {
   font-family: Inter, sans-serif;
@@ -86,7 +93,7 @@ button {
 }
 
 main {
-  margin: 26px;
+  padding: 26px;
 }
 
 header {
@@ -105,7 +112,8 @@ footer div {
   align-items: center;
 }
 
-a {
+a,
+li a {
   text-decoration: none;
 }
 

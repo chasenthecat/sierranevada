@@ -93,6 +93,10 @@ button {
   scroll-behavior: smooth;
 }
 
+.text-center{
+  text-align: center;
+}
+
 .group {
   display: flex;
   gap: 10px;
@@ -209,6 +213,7 @@ footer div {
   margin-bottom: 15px;
 }
 
+select,
 input {
   width: 100%;
   padding: 10px;

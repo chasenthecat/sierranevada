@@ -42,6 +42,7 @@
     <link rel="stylesheet" href="css/navbar.css" />
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/login.css">
     <title>Iniciar Sesión en Sierra Nevada</title>
   </head>
   <body>
@@ -55,8 +56,6 @@
             <div  class="dark-img"></div>
           </button>
           <ul class="nav-menu">
-            <li class="nav-item">
-              <a href="./login.html">Iniciar Sesión</a>
             <li class="nav-item">
               <a href="plans.html">Planes</a>
             </li>
@@ -73,13 +72,55 @@
       </nav>
     </header>
     <main>
-      <h1>Bienvenido</h1>
-      <p>
-        Para iniciar una sesion es necesario que su institucion lo haya
-        previamente registrado.
-      </p>
-      <a class="button" href="./contact.html">Iniciar Sesión</a>
+      <h1 class="text-center">Iniciar Sesión</h1>
+      <svg id="logo-login" viewBox="0 0 331 335">
+        <path
+          d="M330.472 335 165.263.553.054 335h330.418ZM215.344 139.568l88.306 178.765H26.876l88.306-178.765h100.162Zm-91.929-16.667h83.696l-41.848-84.716-41.848 84.716Z"
+        />
+      </svg>
+      <form action="#" method="">
+        <div class="contaiener">
+          <div class="content">
+            <label for="ie">Nombre de su IE</label>
+            <select name="select" id="ie">
+              <option value="" selected></option>
+              <option value="value1">IE Sanvicente de paul</option>
+              <option value="value2">IE las Margaritas</option>
+              <option value="value3">IE Normal superior</option>
+            </select>
+          </div>
+          <div class="content">
+            <label for="rol">Rol</label>
+            <select name="select" id="rol">
+              <option value="" selected></option>
+              <option value="value1">Estudiante</option>
+              <option value="value2" >Profesor</option>
+              <option value="value3">Adminitrador</option>
+            </select>
+          </div>
+          <div class="content">
+            <label for="user">Nombre de Usuario</label>
+            <input type="text" id="user">
+          </div>
+          <div class="content">
+            <label for="pass">Contraseña</label>
+            <input type="text" id="pass">
+          </div>
+          <button type="submit" class="button">Iniciar Sesión</button>
+        </div>
+      </form>
     </main>
+    <footer>
+      <div>
+        <svg id="footer-logo" viewBox="0 0 331 335">
+          <path
+            d="M330.472 335 165.263.553.054 335h330.418ZM215.344 139.568l88.306 178.765H26.876l88.306-178.765h100.162Zm-91.929-16.667h83.696l-41.848-84.716-41.848 84.716Z"
+          />
+        </svg>
+        <span>Sierra Nevada Education</span>
+      </div>
+      &copy; 2021
+    </footer>
     <script src="./js/toggleTheme.js"></script>
     <script src="./js/navbar.js"></script>
   </body>

@@ -15,6 +15,7 @@ h2 {
 h3 {
   font-weight: 600;
   font-size: 46px;
+  margin: 60px 0px;
 }
 
 ul {
@@ -50,8 +51,10 @@ p {
   box-shadow: 0 2px 10px 0 lightgrey;
 }
 
-#plan-2 h2 {
+#plan-2 h2,
+p {
   color: white;
+  background-color: none;
 }
 
 #plan-2 {

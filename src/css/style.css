@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
 
-:root{
+:root {
   --brand-100: #e4fde6;
   --brand-200: #cbfcd3;
   --brand-300: #aef7c1;
@@ -59,26 +59,30 @@
   --button-bg: var(--brand-500);
   --button-bg-hover: var(--brand-400);
   --button-border: var(--brand-600);
+  --button-shadow: var(--brand-400);
   --text-color-h: var(--gray-900);
-  --text-color-ap: var(--gray-400);
-  --background-main: var(--gray-100);
+  --text-color-ap: var(--gray-900);
+  --background-main: white;
   --logo: var(--gray-900);
   --dark-logo: url(../static/ic_lunar-dark-mode.svg);
-  
   --main-logo: url(../static/logo.svg);
   --footer-color: var(--gray-400);
 }
-
 
 * {
   margin: 0;
   padding: 0;
   color: var(--text-color-ap);
+  background-color: var(--background-main);
+}
+
+html,
+body {
+  height: 100%;
 }
 
 html,
 button {
-  background-color: var(--background-main);
   color: var(--gray-900);
   font-family: Inter, sans-serif;
   font-weight: 300;
@@ -90,15 +94,15 @@ button {
   scroll-behavior: smooth;
 }
 
-.group{
+.group {
   display: flex;
-  gap:10px;
+  gap: 10px;
   align-items: center;
 }
-.dark-img{
+.dark-img {
   background: var(--dark-logo);
   background-repeat: no-repeat;
-  height:24px;
+  height: 24px;
   width: 24px;
 }
 #logo {
@@ -241,7 +245,7 @@ button,
   color: white;
   background-color: var(--button-bg);
   border-radius: 8px;
-  box-shadow: 0 2px 10px 0 var(--brand-200);
+  box-shadow: 0 2px 10px 0 var(--button-shadow);
   cursor: pointer;
 }
 
@@ -276,19 +280,19 @@ form input:focus {
 
 #footer-logo {
   width: 20px;
-  fill: var(--footer-color) ;
+  fill: var(--footer-color);
   fill-rule: evenodd;
   clip-rule: evenodd;
   stroke-linejoin: round;
   stroke-miterlimit: 2;
 }
 button#theme-toggler {
-  margin:5px;
+  margin: 5px;
   padding: 0px;
   box-shadow: none;
-  background-color:var(--background-main);
+  background-color: var(--background-main);
 }
-button#theme-toggler:focus ,
+button#theme-toggler:focus,
 button#theme-toggler:hover {
   border: none;
   outline: none;

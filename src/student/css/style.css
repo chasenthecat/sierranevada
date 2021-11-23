@@ -6,6 +6,7 @@ header {
   font-weight: 500;
   display: block;
   padding: 26px 0px 0px 0px;
+  color: var(--gray-900);
 }
 
 header,

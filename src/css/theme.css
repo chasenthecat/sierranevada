@@ -1,9 +1,10 @@
 .dark-mode {
   --text-color-ap: var(--gray-300);
   --text-color-h: var(--gray-100);
-  --background-main: var(--gray-900);
+  --background-main: var(--gray-500);
   --logo: var(--gray-100);
-  background-color: var(--background-main);
   --dark-logo: url(../static/wi_solar-eclipse.svg);
   --main-logo: url(../static/white-logo.svg);
+  --button-shadow: var(--gray-400);
+  background-color: var(--background-main);
 }

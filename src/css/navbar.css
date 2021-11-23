@@ -22,7 +22,7 @@ nav {
   margin: 5px auto;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  background-color: var(--gray-900);
+  background-color: var(--text-color-h);
 }
 
 .nav-menu {
@@ -42,7 +42,7 @@ nav {
     right: -100%;
     top: 5rem;
     flex-direction: column;
-    background-color: white;
+    background-color: var(--background-main);
     width: 100%;
     border-radius: 10px;
     text-align: center;

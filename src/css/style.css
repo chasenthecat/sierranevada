@@ -98,8 +98,8 @@ button {
 .dark-img{
   background: var(--dark-logo);
   background-repeat: no-repeat;
-  height:20px;
-  width: 20px;
+  height:24px;
+  width: 24px;
 }
 #logo {
   margin: 0;
@@ -283,8 +283,8 @@ form input:focus {
   stroke-miterlimit: 2;
 }
 button#theme-toggler {
-  margin-top: 0px;
-  padding: 3px;
+  margin:5px;
+  padding: 0px;
   box-shadow: none;
   background-color:var(--background-main);
 }

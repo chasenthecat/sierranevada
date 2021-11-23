@@ -42,13 +42,22 @@
 .container button{
     margin: 0;
 }
+.center-flex{
+    display: flex;
+    justify-content: center;
+}
 
-#logo-login{
-    width: 10%;
+.center-flex #logo{
+    width: 100px;
+    height: 100px;
 }
 
 @media only screen and (max-width: 660px){
     .content{
         width: 100%;
+    }
+
+    button.button{
+        padding: 10px;
     }
 }

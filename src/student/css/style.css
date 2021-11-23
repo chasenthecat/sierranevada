@@ -6,7 +6,7 @@
 header {
   font-weight: 500;
   display: block;
-  padding: 26px 0px 0px 0px;
+  padding: 26px;
   color: var(--gray-900);
 }
 
@@ -20,13 +20,14 @@ footer {
   background: var(--gray-50);
 }
 
+main {
+  height: calc(100vh - 130px);
+}
+
 nav {
   display: flex;
-  margin-bottom: 28px;
   justify-content: space-between;
   align-items: center;
-  margin-left: 26px;
-  margin-right: 26px;
 }
 
 header svg {
@@ -80,10 +81,11 @@ section h3 {
 
 .tabs::-webkit-scrollbar,
 table::-webkit-scrollbar {
-  display: none; /* Safari and Chrome */
+  display: none;
 }
 
 .tabs a {
+  float: left;
   font-weight: 300;
   color: var(--gray-300);
   padding: 6px 16px;
@@ -161,4 +163,15 @@ a:hover {
 
 #user span {
   color: var(--text-color-h) !important;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  border-bottom: 1px solid var(--gray-100);
+}
+
+.sticky + main {
+  margin-top: 60px;
 }

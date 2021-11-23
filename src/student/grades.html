@@ -50,8 +50,8 @@
     <header>
       <nav>
         <img src="../static/logo.svg" alt="Ir al inicio" id="logo" />
-        <div>
-          flipper
+        <div id="user">
+          <span>flipper</span>
           <svg viewBox="0 0 24 24">
             <g>
               <path
@@ -69,13 +69,13 @@
           </g>
         </svg>
       </nav>
-      <div class="tabs">
-        <div class="tab"><a href="./index.html">Inicio</a></div>
-        <div class="tab selected"><a href="#">Notas</a></div>
-        <div class="tab"><a href="./activities.html">Actividades</a></div>
-        <div class="tab"><a href="#">Ajustes</a></div>
-      </div>
     </header>
+    <div class="tabs" id="tabs">
+      <div class="tab"><a href="./index.html">Inicio</a></div>
+      <div class="tab selected"><a href="#">Notas</a></div>
+      <div class="tab"><a href="./activities.html">Actividades</a></div>
+      <div class="tab"><a href="#">Ajustes</a></div>
+    </div>
     <main>
       <section>
         <h2>Tus notas por periodo</h2>
@@ -169,6 +169,7 @@
       </div>
       &copy; 2021
     </footer>
+    <script src="./js/sticky.js"></script>
     <script src="./js/toggleTheme.js"></script>
   </body>
 </html>

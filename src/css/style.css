@@ -116,7 +116,6 @@ button {
   height: 40px;
   width: 40px;
   background-image: var(--main-logo);
-  fill: var(--main-logo);
   background-repeat: no-repeat;
 }
 

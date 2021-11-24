@@ -4,14 +4,14 @@ Project for Web Development Course.
 
 ## Try it
 
-1. Install `live-server`:
+1. Install dev dependencies:
 
 ```sh
-npm -i live-server
+npm install
 ```
 
 2. Test it
 
 ```sh
-live-server
+npm run dev
 ```

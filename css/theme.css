@@ -1,0 +1,18 @@
+.dark-mode {
+  --text-color-ap: var(--gray-300);
+  --text-color-hover: var(--gray-200);
+  --text-color-h: white;
+  --background-main: var(--gray-500);
+  --logo: var(--gray-100);
+  --dark-logo: url(../static/wi_solar-eclipse.svg);
+  --main-logo: url(../static/white-logo.svg);
+  --button-shadow: var(--gray-400);
+  --card-shadow: var(--gray-600);
+  --tab-selected: var(--gray-300);
+  background-color: var(--background-main);
+  --line: var(--gray-400);
+  --em: white;
+  --hover: var(--gray-400);
+  --text-color-gray: var(--gray-400);
+  --background-gray: var(--background-main);
+}

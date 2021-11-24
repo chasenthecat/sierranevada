@@ -1,0 +1,21 @@
+input {
+  width: 90%;
+}
+
+form {
+  margin: 20px 0px;
+  width: auto;
+}
+
+@media only screen and (min-width: 660px) {
+  main {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    display: flex;
+    gap: 20px;
+  }
+
+  input {
+    width: 100%;
+  }
+}

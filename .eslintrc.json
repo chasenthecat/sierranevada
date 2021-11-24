@@ -3,17 +3,12 @@
     "es6": true,
     "browser": true
   },
-  "extends": [
-    "airbnb-base",
-    "prettier"
-  ],
+  "extends": ["prettier"],
   "parser": "",
   "parserOptions": {
     "ecmaVersion": 6,
     "sourceType": "module"
   },
-  "plugins": [
-    "prettier"
-  ],
+  "plugins": ["prettier"],
   "rules": {}
 }

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 :root {
   --brand-100: #e4fde6;
@@ -96,7 +96,7 @@ button {
   margin: 0;
   -webkit-font-smoothing: antialised;
   direction: ltr;
-  font-feature-settings: "kern";
+  font-feature-settings: 'kern';
   text-rendering: optimizeLegibility;
   scroll-behavior: smooth;
 }

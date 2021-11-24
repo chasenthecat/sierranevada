@@ -1,4 +1,4 @@
-function myFunction() {
+const myFunction = () => {
   document.getElementById('myDropdown').classList.toggle('show')
 }
 
@@ -10,3 +10,5 @@ window.onclick = (e) => {
     }
   }
 }
+
+export default myFunction

@@ -45,7 +45,7 @@
     <link rel="stylesheet" href="./css/responsive.css" />
     <link rel="stylesheet" href="./css/grades.css" />
     <link rel="stylesheet" href="./css/table.css" />
-    <link rel="stylesheet" href="css/dropdown.css">
+    <link rel="stylesheet" href="./css/dropdown.css" />
   </head>
   <body>
     <header>
@@ -55,7 +55,8 @@
         </a>
         <div id="user">
           <div class="dropdown">
-            <button class="dropbtn" onclick="myFunction()">flipper
+            <button class="dropbtn" onclick="myFunction()">
+              flipper
               <svg viewBox="0 0 24 24">
                 <g>
                   <path
@@ -64,16 +65,15 @@
                 </g>
               </svg>
             </button>
-            
-              <div class="dropdown-content" id="myDropdown">
-                <a href="#">Modo oscuro:
-                  <button id="theme-toggler">
-                    <div class="dark-img"></div>
-                  </button></a>
-                <a href="#">Salir</a>
-              </div>
-            </div> 
+            <div class="dropdown-content" id="myDropdown">
+              <button id="theme-toggler">
+                Modo oscuro
+                <div class="dark-img"></div>
+              </button>
+              <a href="#">Salir</a>
+            </div>
           </div>
+        </div>
         <svg viewBox="0 0 24 24">
           <g>
             <path
@@ -87,7 +87,6 @@
       <div class="tab"><a href="./index.html">Inicio</a></div>
       <div class="tab selected"><a href="#">Notas</a></div>
       <div class="tab"><a href="./activities.html">Actividades</a></div>
-      <div class="tab"><a href="#">Ajustes</a></div>
     </div>
     <main>
       <section>
@@ -185,6 +184,5 @@
     <script src="./js/sticky.js"></script>
     <script src="../js/toggleTheme.js"></script>
     <script src="./js/dropdown.js"></script>
-
   </body>
 </html>

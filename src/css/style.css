@@ -63,14 +63,19 @@
   --text-color-h: var(--gray-900);
   --text-color-ap: var(--gray-400);
   --text-color-hover: var(--gray-900);
+  --text-color-gray: var(--gray-300);
   --background-main: white;
+  --background-gray: var(--gray-50);
   --logo: var(--gray-900);
   --dark-logo: url(../static/ic_lunar-dark-mode.svg);
   --main-logo: url(../static/logo.svg);
   --footer-color: var(--gray-300);
   --card-shadow: var(--gray-100);
   --tab-selected: var(--gray-900);
-  --tab-border-bottom: var(--gray-100)
+  --tab-border-bottom: var(--gray-100);
+  --em: var(--gray-900);
+  --hover: var(--gray-50);
+  --line: var(--gray-200);
 }
 ::selection {
   background-color: var(--brand-400);
@@ -203,7 +208,7 @@ footer {
   color: var(--footer-color);
   padding: 150px 0px;
   border-style: solid;
-  border-color: var(--gray-300);
+  border-color: var(--line);
   border-width: 0.2px 0px 0px 0px;
   text-align: center;
 }

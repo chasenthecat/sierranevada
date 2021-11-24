@@ -1,7 +1,7 @@
-.h3 a{
-  color : var(--text-color-h);
-  
+.h3 a {
+  color: var(--text-color-h);
 }
+
 #logo {
   width: 20px;
   height: 20px;
@@ -21,7 +21,7 @@ header,
 
 main,
 footer {
-  background: var(--background-main);
+  background: var(--background-gray);
 }
 
 nav {
@@ -60,6 +60,7 @@ section p {
 
 section p em {
   font-style: normal;
+  color: var(--em);
 }
 
 section h3 {
@@ -76,7 +77,7 @@ section h3 {
   margin: auto auto -1px;
   padding: 0 26px;
   align-items: flex-start;
-  border-bottom: 2px solid var(--tab-selected);
+  border-bottom: 2px solid var(--line);
   line-height: normal;
 }
 
@@ -88,7 +89,7 @@ table::-webkit-scrollbar {
 .tabs a {
   float: left;
   font-weight: 300;
-  color: var(--text-color-h);
+  color: var(--text-color-gray);
   padding: 6px 16px;
 }
 
@@ -97,14 +98,14 @@ table::-webkit-scrollbar {
 }
 
 .tabs a:hover {
+  color: var(--em);
   border-radius: 5px;
-  background-color: var(--background-main);
+  background-color: var(--hover);
   text-decoration: none;
 }
 
 .selected {
-  position: relative;
-  border-bottom: 2px solid var(--tab-selected);
+  border-bottom: 2px solid var(--em);
 }
 
 .selected a {
@@ -117,6 +118,7 @@ table::-webkit-scrollbar {
   border-radius: 10px;
   margin: 24px 0px;
   box-shadow: 0 2px 10px 0 var(--card-shadow);
+  border: 1.5px solid var(--line);
 }
 
 h2 {
@@ -130,7 +132,7 @@ h3 {
 }
 
 a {
-  color: var(--text-color-h);
+  color: var(--em);
 }
 
 a:hover {
@@ -170,7 +172,7 @@ a:hover {
   position: fixed;
   top: 0;
   width: 100%;
-  border-bottom: 1px solid var(--gray-100);
+  border-bottom: 1px solid var(--line);
 }
 
 .sticky + main {

@@ -8,7 +8,7 @@ table {
 }
 
 tr {
-  border-bottom: 1px solid var(--gray-100);
+  border-bottom: 1px solid var(--line);
 }
 
 th {
@@ -29,5 +29,6 @@ td {
 }
 
 td {
+  color: var(--em);
   font-size: 14px;
 }

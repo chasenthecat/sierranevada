@@ -10,4 +10,9 @@
   --card-shadow: var(--gray-600);
   --tab-selected: var(--gray-300);
   background-color: var(--background-main);
+  --line: var(--gray-400);
+  --em: white;
+  --hover: var(--gray-400);
+  --text-color-gray: var(--gray-400);
+  --background-gray: var(--background-main);
 }

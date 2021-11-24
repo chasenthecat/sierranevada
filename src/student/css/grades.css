@@ -1,6 +1,6 @@
 main,
 footer {
-  background: white !important;
+  background-color: var(--background-main);
 }
 
 .warn {

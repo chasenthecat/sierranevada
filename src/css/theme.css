@@ -7,5 +7,7 @@
   --dark-logo: url(../static/wi_solar-eclipse.svg);
   --main-logo: url(../static/white-logo.svg);
   --button-shadow: var(--gray-400);
+  --card-shadow: var(--gray-600);
+  --tab-selected: var(--gray-300);
   background-color: var(--background-main);
 }

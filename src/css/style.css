@@ -93,7 +93,7 @@ button {
   scroll-behavior: smooth;
 }
 
-.text-center{
+.text-center {
   text-align: center;
 }
 
@@ -301,6 +301,7 @@ button#theme-toggler {
   box-shadow: none;
   background-color: var(--background-main);
 }
+
 button#theme-toggler:focus,
 button#theme-toggler:hover {
   border: none;

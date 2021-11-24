@@ -171,3 +171,7 @@ a:hover {
 .sticky + main {
   margin-top: 60px;
 }
+
+#create-event {
+  text-decoration: none;
+}

@@ -1,4 +1,4 @@
-const myFunction = () => {
+const toggleDropdown = () => {
   document.getElementById('myDropdown').classList.toggle('show')
 }
 
@@ -10,5 +10,3 @@ window.onclick = (e) => {
     }
   }
 }
-
-export default myFunction

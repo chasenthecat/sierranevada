@@ -1,32 +1,22 @@
 {
   "name": "sierranevada",
-  "version": "1.0.1",
-  "description": "Project for Web Development Course.",
-  "main": "./src/index.html",
+  "version": "0.0.0",
   "scripts": {
-    "publish:gh": "gh-pages -d src",
-    "dev": "live-server src"
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "serve": "vite preview"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/chasenthecat/sierranevada.git"
+  "dependencies": {
+    "vue": "^3.2.16",
+    "vue-router": "4"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/chasenthecat/sierranevada/issues"
-  },
-  "homepage": "https://github.com/chasenthecat/sierranevada",
   "devDependencies": {
-    "eslint": "^8.3.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-config-standard": "^16.0.3",
-    "eslint-plugin-html": "^6.2.0",
-    "eslint-plugin-import": "^2.25.3",
-    "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-promise": "^5.1.1",
-    "gh-pages": "^3.2.3",
-    "live-server": "^1.2.1"
+    "@vitejs/plugin-vue": "^1.9.3",
+    "autoprefixer": "^10.4.0",
+    "postcss": "^8.4.4",
+    "tailwindcss": "^2.2.19",
+    "typescript": "^4.4.3",
+    "vite": "^2.6.4",
+    "vue-tsc": "^0.3.0"
   }
 }

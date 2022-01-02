@@ -50,8 +50,18 @@
   display: block;
 }
 
-#theme-toggler {
+button#theme-toggler {
   display: flex;
   align-items: center;
-  gap: 5px;
+  padding: 5px;
+  margin: 0 0 0 0;
+}
+.dark-img{
+  margin: 5px;
+}
+
+.dropdown-content a:hover,
+.dropdown-content button#theme-toggler:hover {
+  background: var(--hover);
+  border-radius: 10px;
 }

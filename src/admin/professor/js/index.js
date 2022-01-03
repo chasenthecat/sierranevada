@@ -18,8 +18,15 @@ function formOnChange(select) {
         divSecondLastName = document.getElementById('div-second-last-name');
         divSecondLastName.style.display = "";
 
-        btn = document.getElementById('btn-submit');
-        btn.setAttribute('onclick', 'addProfessor()');
+        btn = document.getElementById('btn1');
+        btn.style.display = "";
+
+        btn = document.getElementById('btn2');
+        btn.style.display = "none";
+
+        btn = document.getElementById('btn3');
+        btn.style.display = "none";
+
     }
     else if (select.value == 'actualizar') {
         divId = document.getElementById('div-id');
@@ -40,6 +47,14 @@ function formOnChange(select) {
         divSecondLastName = document.getElementById('div-second-last-name');
         divSecondLastName.style.display = "";
 
+        btn = document.getElementById('btn1');
+        btn.style.display = "none";
+
+        btn = document.getElementById('btn2');
+        btn.style.display = "";
+        
+        btn = document.getElementById('btn3');
+        btn.style.display = "none";
 
     }
     else if (select.value == 'eliminar') {
@@ -60,6 +75,15 @@ function formOnChange(select) {
 
         divSecondLastName = document.getElementById('div-second-last-name');
         divSecondLastName.style.display = "none";
+
+        btn = document.getElementById('btn1');
+        btn.style.display = "none";
+
+        btn = document.getElementById('btn2');
+        btn.style.display = "none";
+        
+        btn = document.getElementById('btn3');
+        btn.style.display = "";
     }
 }
 
@@ -91,14 +115,14 @@ function addProfessor() {
             password: formProfessor.id.value,
         }),
     })
-    .then((response) => response.json())
-          .then((data) => console.log(data))
-          .catch((err) => {
+        .then((response) => response.json())
+        .then((data) => console.log(data))
+        .catch((err) => {
             console.log(err);
-           });
+        });
 }
 
-function updateProfessor(){
+function updateProfessor() {
     fetch(link, {
         method: 'PUT',
         headers: {
@@ -115,11 +139,11 @@ function updateProfessor(){
             password: form.id.value,
         }),
     })
-    .then((response) => response.json())
-          .then((data) => console.log(data))
-          .catch((err) => {
+        .then((response) => response.json())
+        .then((data) => console.log(data))
+        .catch((err) => {
             console.log(err);
-           });
+        });
 }
 
 /* let formbuttonProfessor = form.submit.addEventListener('click', (e) => {

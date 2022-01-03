@@ -15,4 +15,5 @@
   --hover: var(--gray-400);
   --text-color-gray: var(--gray-400);
   --background-gray: var(--background-main);
+  --input-bg: var(--gray-400);
 }

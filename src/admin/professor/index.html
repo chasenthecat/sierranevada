@@ -44,6 +44,7 @@
     <link rel="stylesheet" href="../../student/css/style.css" />
     <link rel="stylesheet" href="../../student/css/responsive.css" />
     <link rel="stylesheet" href="../../css/dropdown.css" />
+    <link rel="stylesheet" href="../css/main.css" />
   </head>
   <body>
     <header>
@@ -89,7 +90,43 @@
       <div class="tab"><a href="../assignament/index.html">Asignaturas</a></div>
     </div>
     <main>
-        
+      <div class="select-h2">
+        <div class="h2">
+          <h2>Registro de Prefesores</h2>
+        </div id="form-admin">
+          <select name="select" class="select-content" id="form-selector" onChange="formOnChange(this)">
+            <option value="crear" selected>Crear</option>
+            <option value="actualizar">Actualizar</option>
+            <option value="eliminar">Eliminar</option>
+          </select>
+        </div>
+      <div class="form-container">
+          <div class="input-container" id="div-id" style="display:'';">
+            <label for="name">Identificacion</label>
+            <input type="text" id="identification"  />
+          </div>
+          <div class="input-container" id="div-email" style="display:'';">
+            <label for="name">Correo</label>
+            <input type="text" id="email" />
+          </div>
+          <div class="input-container" id="div-first-name" style="display:'';">
+            <label for="name">Primer Nombre</label>
+            <input type="text" id="first-name" />
+          </div>
+          <div class="input-container"id="div-second-name" style="display:'';">
+            <label for="name">Segundo Nombre</label>
+            <input type="text" id="second-name" />
+          </div>
+          <div class="input-container" id="div-last-name" style="display:'';">
+            <label for="name">Primer Apellido</label>
+            <input type="text" id="last-name" />
+          </div>
+          <div class="input-container" id="div-second-last-name" style="display:'';">
+            <label for="name">Segundo Apellido</label>
+            <input type="text" id="second-last-name" />
+          </div>
+          <button >Enviar</button>
+      </div>
     </main>
     <footer>
       <div>
@@ -102,6 +139,7 @@
       </div>
       &copy; 2021
     </footer>
+    <script src="./js/index.js"></script>
     <script src="../../student/js/sticky.js"></script>
     <script src="../../js/toggleTheme.js"></script>
     <script src="../../student/js/dropdown.js"></script>

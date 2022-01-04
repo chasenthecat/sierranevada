@@ -28,38 +28,9 @@ function formOnChange(select) {
         btn.style.display = "none";
 
     }
-    else if (select.value == 'actualizar') {
+    else{
         divId = document.getElementById('div-id');
-        divId.style.display = "";
-
-        divEmail = document.getElementById('div-email');
-        divEmail.style.display = "";
-
-        divFirstName = document.getElementById('div-first-name');
-        divFirstName.style.display = "";
-
-        divSecondName = document.getElementById('div-second-name');
-        divSecondName.style.display = "";
-
-        divLastName = document.getElementById('div-last-name');
-        divLastName.style.display = "";
-
-        divSecondLastName = document.getElementById('div-second-last-name');
-        divSecondLastName.style.display = "";
-
-        btn = document.getElementById('btn1');
-        btn.style.display = "none";
-
-        btn = document.getElementById('btn2');
-        btn.style.display = "";
-        
-        btn = document.getElementById('btn3');
-        btn.style.display = "none";
-
-    }
-    else if (select.value == 'eliminar') {
-        divId = document.getElementById('div-id');
-        divId.style.display = "";
+        divId.style.display = "none";
 
         divEmail = document.getElementById('div-email');
         divEmail.style.display = "none";
@@ -78,12 +49,6 @@ function formOnChange(select) {
 
         btn = document.getElementById('btn1');
         btn.style.display = "none";
-
-        btn = document.getElementById('btn2');
-        btn.style.display = "none";
-        
-        btn = document.getElementById('btn3');
-        btn.style.display = "";
     }
 }
 
@@ -106,7 +71,7 @@ function addProfessor() {
             "Content-Type": "application/json",
         },
         body: JSON.stringify({
-            id: formProfessor.id.value,
+            identification: formProfessor.id.value,
             firstName: formProfessor.firstName.value,
             secondName: formProfessor.secondName.value,
             lastName: formProfessor.lastName.value,
@@ -123,20 +88,21 @@ function addProfessor() {
 }
 
 function updateProfessor() {
-    fetch(link, {
+
+    fetch(link + `?identification=${formProfessor.id.value}`, {
         method: 'PUT',
         headers: {
             Accept: "application/json, text/plain, */*",
             "Content-Type": "application/json",
         },
         body: JSON.stringify({
-            id: form.id.value,
-            firstName: form.firstName.value,
-            secondName: form.secondName.value,
-            lastName: form.lastName.value,
-            secondLastName: form.secondLastName.value,
-            email: form.email.value,
-            password: form.id.value,
+            identification: formProfessor.id.value,
+            firstName: formProfessor.firstName.value,
+            secondName: formProfessor.secondName.value,
+            lastName: formProfessor.lastName.value,
+            secondLastName: formProfessor.secondLastName.value,
+            email: formProfessor.email.value,
+            password: formProfessor.id.value,
         }),
     })
         .then((response) => response.json())

@@ -21,14 +21,11 @@ function formOnChange(select) {
         btn = document.getElementById('btn1');
         btn.style.display = "";
 
-        btn = document.getElementById('btn2');
-        btn.style.display = "none";
-
-        btn = document.getElementById('btn3');
-        btn.style.display = "none";
+        table = document.getElementById('data');
+        table.style.display = "none";
 
     }
-    else{
+    else {
         divId = document.getElementById('div-id');
         divId.style.display = "none";
 
@@ -49,10 +46,16 @@ function formOnChange(select) {
 
         btn = document.getElementById('btn1');
         btn.style.display = "none";
+
+        table = document.getElementById('data');
+        table.style.display = "";
+
+        listProfessor(link);
     }
 }
 
 const formProfessor = {
+    data_id: document.getElementById('id'),
     id: document.getElementById('identification'),
     email: document.getElementById('email'),
     firstName: document.getElementById('first-name'),
@@ -87,9 +90,9 @@ function addProfessor() {
         });
 }
 
-function updateProfessor() {
+function updateProfessor(id) {
 
-    fetch(link + `?identification=${formProfessor.id.value}`, {
+    fetch(link + `/${id}`, {
         method: 'PUT',
         headers: {
             Accept: "application/json, text/plain, */*",
@@ -123,18 +126,22 @@ function listProfessor(link) {
                 fila.insertCell().innerHTML = data[i].identification;
                 fila.insertCell().innerHTML = data[i].firstName + ' ' + data[i].secondName + ' ' + data[i].lastName + ' ' + data[i].secondLastName;
                 fila.insertCell().innerHTML = `
-            <button class="btn btn-warning">editar</button> | <button onclik="deleteProfessor(${data[i].id})" class="btn btn-danger">borrar</button>
+            <button type="button"><a href="./editar.html">editar</a></button> | <button type="button" onclick="deleteProfessor(${data[i].id})" >borrar</button>
             `;
             }
         });
 }
 
-listProfessor(link);
 
-function deleteProfessor(id){
-    fetch(link + "/" + id, {
+
+function deleteProfessor(id) {
+    fetch(link + `/${id}`, {
         method: 'DELETE',
     })
+        .then(res => res.json())
+        .then(res => {
+            console.log(res);
+        });
 }
 
 /* let formbuttonProfessor = form.submit.addEventListener('click', (e) => {

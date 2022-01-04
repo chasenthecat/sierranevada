@@ -112,6 +112,31 @@ function updateProfessor() {
         });
 }
 
+function listProfessor(link) {
+    const tbody = document.getElementById('list');
+    fetch(link)
+        .then(response => response.json())
+        .then(data => {
+            tbody.innerHTML = '';
+            for (let i = 0; i < data.length; i++) {
+                let fila = tbody.insertRow();
+                fila.insertCell().innerHTML = data[i].identification;
+                fila.insertCell().innerHTML = data[i].firstName + ' ' + data[i].secondName + ' ' + data[i].lastName + ' ' + data[i].secondLastName;
+                fila.insertCell().innerHTML = `
+            <button class="btn btn-warning">editar</button> | <button onclik="deleteProfessor(${data[i].id})" class="btn btn-danger">borrar</button>
+            `;
+            }
+        });
+}
+
+listProfessor(link);
+
+function deleteProfessor(id){
+    fetch(link + "/" + id, {
+        method: 'DELETE',
+    })
+}
+
 /* let formbuttonProfessor = form.submit.addEventListener('click', (e) => {
     e.preventDefault();
     const login = 'https://61cd235c198df60017aec2ee.mockapi.io/Professor';

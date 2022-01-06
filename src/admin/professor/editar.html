@@ -101,7 +101,7 @@
       <div class="select-h2">
         <h2>Registro de Prefesores</h2>
       </div>
-      <div class="form-container">
+      <div class="form-container" id="form-container">
         <div class="input-container" id="div-data-id" style="display: ''">
             <label for="name">Data ID</label>
             <input type="text" id="id" readonly/>
@@ -135,7 +135,7 @@
           <input type="text" id="second-last-name" />
         </div>
         <div id="btn1" style="display: inherit">
-          <button id="btn-submit" onclick="updateProfessor(id)">Enviar</button>
+          <button id="btn-submit" onclick="updateProfessor(myParam)">Enviar</button>
         </div>
       </div>
     </main>
@@ -154,5 +154,26 @@
     <script src="../../student/js/sticky.js"></script>
     <script src="../../js/toggleTheme.js"></script>
     <script src="../../student/js/dropdown.js"></script>
+
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const myParam = urlParams.get('id');
+      const url = 'https://61cd235c198df60017aec2ee.mockapi.io/Professor';
+
+      console.log(myParam);
+
+      fetch(url + "/" + myParam)
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+          document.getElementById("id").value = data.id;
+          document.getElementById("identification").value = data.identification;
+          document.getElementById("email").value = data.email;
+          document.getElementById("first-name").value = data.firstName;
+          document.getElementById("second-name").value = data.secondName;
+          document.getElementById("last-name").value = data.lastName;
+          document.getElementById("second-last-name").value = data.secondLastName;
+        });
+    </script>
   </body>
 </html>

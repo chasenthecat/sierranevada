@@ -82,6 +82,7 @@ function addProfessor() {
             email: formProfessor.email.value,
             password: formProfessor.id.value,
         }),
+        
     })
         .then((response) => response.json())
         .then((data) => console.log(data))
@@ -126,7 +127,7 @@ function listProfessor(link) {
                 fila.insertCell().innerHTML = data[i].identification;
                 fila.insertCell().innerHTML = data[i].firstName + ' ' + data[i].secondName + ' ' + data[i].lastName + ' ' + data[i].secondLastName;
                 fila.insertCell().innerHTML = `
-            <button type="button"><a href="./editar.html">editar</a></button> | <button type="button" onclick="deleteProfessor(${data[i].id})" >borrar</button>
+            <button onclick="goedit(${data[i].id})" type="button">Editar</button> | <button type="button" onclick="deleteProfessor(${data[i].id})" >borrar</button>
             `;
             }
         });
@@ -143,6 +144,11 @@ function deleteProfessor(id) {
             console.log(res);
         });
 }
+
+function goedit(id){
+    window.location.href = "editar.html?id=" + id;
+}
+
 
 /* let formbuttonProfessor = form.submit.addEventListener('click', (e) => {
     e.preventDefault();

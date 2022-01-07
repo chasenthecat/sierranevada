@@ -24,10 +24,11 @@ button{
     max-width: 350px;
     width:330px
 }
-input{
+input, select{
     max-width: 300px;
     background: var(--input-bg)
 }
+
 option{
     color: var(--gray-900);
 }

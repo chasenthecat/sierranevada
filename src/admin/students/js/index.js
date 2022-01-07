@@ -50,6 +50,9 @@ function formOnChange(select) {
         table = document.getElementById('data');
         table.style.display = "";
 
+        levelForm = document.getElementById('div-level-group');
+        levelForm.style.display = "none";
+
         listStudent(link_student);
     }
 }
@@ -87,8 +90,12 @@ function addStudent() {
         }),
 
     })
-        .then((response) => response.json())
-        .then((data) => console.log(data))
+        .then((response) => {
+            if (response.status == 201) {
+                alert('Se ha creado correctamente');
+                window.location.href = "index.html";
+            }
+        })
         .catch((err) => {
             console.log(err);
             alert('Error al crear el estudiante');
@@ -111,10 +118,15 @@ function updateStudent(id) {
             secondLastName: formStudent.secondLastName.value,
             email: formStudent.email.value,
             password: formStudent.id.value,
+            levelGroup: formStudent.level.value,
         }),
     })
-        .then((response) => response.json())
-        .then((data) => console.log(data))
+        .then((response) => {
+            if (response.status == 200) {
+                alert('Se ha creado actualizado correctamente');
+                window.location.href = "index.html";
+            }
+        })
         .catch((err) => {
             console.log(err);
         });
@@ -141,10 +153,14 @@ function deleteStudent(id) {
     fetch(link_student + `/${id}`, {
         method: 'DELETE',
     })
-        .then(res => res.json())
-        .then(res => {
-            console.log(res);
-        });
+        .then((response) => {
+            console.log(response.status);
+            if (response.status == 200) {
+                // let tbody = document.getElementById('list');
+                // tbody.removeChild(tbody.childNodes[id]);
+                alert('Se ha eliminado correctamente');
+            }
+        })
 }
 
 function goedit(id) {
@@ -153,13 +169,13 @@ function goedit(id) {
 
 const link_groups = 'https://61cd1a30198df60017aec2d4.mockapi.io/api/v1/group';
 
-window.onload = function() {
+window.onload = function () {
     const select = document.getElementById('levelGroup');
     fetch(link_groups)
         .then(response => response.json())
         .then(data => {
             for (let i = 0; i < data.length; i++) {
-                if(i==0){
+                if (i == 0) {
                     let option = document.createElement('option');
                     option.value = '';
                     option.innerHTML = 'Seleccionar un Grupo';

@@ -90,10 +90,10 @@
     </header>
     <div class="tabs" id="tabs">
       <div class="tab"><a href="../index.html">Inicio</a></div>
-      <div class="tab selected">
+      <div class="tab ">
         <a href="../professor/index.html">Profesores</a>
       </div>
-      <div class="tab"><a href="../students/index.html">Estudiantes</a></div>
+      <div class="tab selected"><a href="../students/index.html">Estudiantes</a></div>
       <div class="tab"><a href="../courses/index.html">Cursos</a></div>
       <div class="tab"><a href="../group/index.html">Grupos</a></div>
     </div>
@@ -144,7 +144,7 @@
         </select>
         </div>
         <div id="btn1" style="display: inherit">
-          <button id="btn-submit" onclick="updateProfessor(myParam)">Enviar</button>
+          <button id="btn-submit" onclick="updateStudent(myParam)">Enviar</button>
         </div>
       </div>
     </main>
@@ -167,7 +167,7 @@
     <script>
       const urlParams = new URLSearchParams(window.location.search);
       const myParam = urlParams.get('id');
-      const url = 'https://61cd235c198df60017aec2ee.mockapi.io/Professor';
+      const url = 'https://61cd1a30198df60017aec2d4.mockapi.io/api/v1/student';
 
       console.log(myParam);
 
@@ -182,6 +182,7 @@
           document.getElementById("second-name").value = data.secondName;
           document.getElementById("last-name").value = data.lastName;
           document.getElementById("second-last-name").value = data.secondLastName;
+          document.getElementById("levelGroup").value = data.levelGroup;
         });
     </script>
   </body>

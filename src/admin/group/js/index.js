@@ -44,8 +44,12 @@ function addGroup() {
         }),
 
     })
-        .then((response) => response.json())
-        .then((data) => console.log(data))
+        .then((response) => {
+            if (response.status == 200) {
+                alert('Se ha creado correctamente');
+                window.location.href = "index.html";
+            }
+        })
         .catch((err) => {
             console.log(err);
             alert('Error al crear el estudiante');
@@ -64,8 +68,13 @@ function updateGroup(id) {
             level: formGroup.level.value,
         }),
     })
-        .then((response) => response.json())
-        .then((data) => console.log(data))
+        .then(
+            (response) => {
+                if (response.status == 200) {
+                    alert('Se ha editado correctamente');
+                    window.location.href = "index.html";
+                }
+            })
         .catch((err) => {
             console.log(err);
         });
@@ -92,11 +101,18 @@ function deleteGroup(id) {
     fetch(link_group + `/${id}`, {
         method: 'DELETE',
     })
-        .then(res => res.json())
-        .then(res => {
-            console.log(res);
+        .then(
+            (response) => {
+                if (response.status == 200) {
+                    alert('Se ha eliminado correctamente');
+                    window.location.href = "index.html";
+                }
+            })
+        .catch((err) => {
+            console.log(err);
         });
 }
+
 
 function goedit(id) {
     window.location.href = "editar.html?id=" + id;

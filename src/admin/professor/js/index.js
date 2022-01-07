@@ -82,12 +82,17 @@ function addProfessor() {
             email: formProfessor.email.value,
             password: formProfessor.id.value,
         }),
-        
+
     })
-        .then((response) => response.json())
-        .then((data) => console.log(data))
+        .then((response) => {
+            if (response.status == 201) {
+                alert('Se ha creado correctamente');
+                window.location.href = "index.html";
+            }
+        })
         .catch((err) => {
             console.log(err);
+            alert('No se ha podido crear');
         });
 }
 
@@ -109,8 +114,14 @@ function updateProfessor(id) {
             password: formProfessor.id.value,
         }),
     })
-        .then((response) => response.json())
-        .then((data) => console.log(data))
+        .then(
+            (response) => {
+                if (response.status == 200) {
+                    alert('Se ha actualizado correctamente');
+                    window.location.href = "index.html";
+                }
+            }
+        )
         .catch((err) => {
             console.log(err);
         });
@@ -139,13 +150,17 @@ function deleteProfessor(id) {
     fetch(link + `/${id}`, {
         method: 'DELETE',
     })
-        .then(res => res.json())
-        .then(res => {
-            console.log(res);
-        });
+        .then(
+            (response) => {
+                if (response.status == 200) {
+                    alert('Se ha eliminado correctamente');
+                    window.location.href = "index.html";
+                }
+            }
+        );
 }
 
-function goedit(id){
+function goedit(id) {
     window.location.href = "editar.html?id=" + id;
 }
 

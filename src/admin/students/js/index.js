@@ -83,7 +83,7 @@ function addStudent() {
             secondLastName: formStudent.secondLastName.value,
             email: formStudent.email.value,
             password: formStudent.id.value,
-            level: formStudent.level,
+            levelGroup: formStudent.level.value,
         }),
 
     })
@@ -174,7 +174,3 @@ window.onload = function() {
 }
 
 
-function selectedGroup(element) {
-    let text = `${element.options[element.selectedIndex].value}`;
-    console.log(text);    
-}

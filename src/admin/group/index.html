@@ -95,7 +95,7 @@
         <a href="../students/index.html">Estudiantes</a>
       </div>
       <div class="tab"><a href="../courses/index.html">Cursos</a></div>
-      <div class="tab selected"><a href="../group/index.html">Grupos</a></div>
+      <div class="tab selected"><a href="#">Grupos</a></div>
     </div>
     <main>
       <div class="select-h2">
@@ -113,9 +113,10 @@
         </select>
       </div>
       <div class="form-container">
-        <div class="input-container" id="div-level" style="display: none">
+        <div class="input-container" id="div-level" style="display: ''">
           <label for="name">Agregar Nuevo Grupo</label>
           <input type="text" id="level" />
+        </div>
         </div>
         <div id="btn1" style="display: inherit">
           <button id="btn-submit" onclick="addGroup()">Enviar</button>
@@ -131,6 +132,19 @@
               </tr>
             </thead>
             <tbody id="list"></tbody>
+          </table>
+        </div>
+      </div>
+      <div id="data_students" style="display: none">
+        <div class="table-container">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Nombre Estudiantes</th>
+              </tr>
+            </thead>
+            <tbody id="list_students"></tbody>
           </table>
         </div>
       </div>

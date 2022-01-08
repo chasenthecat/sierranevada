@@ -68,8 +68,7 @@ const formStudent = {
     level: document.getElementById('levelGroup'),
 };
 
-
-const link_student = 'https://61cd1a30198df60017aec2d4.mockapi.io/api/v1/student';
+let link_student = 'https://61cd1a30198df60017aec2d4.mockapi.io/api/v1/student';
 
 function addStudent() {
     fetch(link_student, {
@@ -182,7 +181,7 @@ window.onload = function () {
                     select.appendChild(option);
                 }
                 let option = document.createElement('option');
-                option.value = data[i].id;
+                option.value = data[i].level;
                 option.innerHTML = data[i].level;
                 select.appendChild(option);
             }

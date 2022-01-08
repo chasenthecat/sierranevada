@@ -9,6 +9,9 @@ function formOnChange(select) {
         table = document.getElementById('data');
         table.style.display = "none";
 
+        table2 = document.getElementById('data_students');
+        table2.style.display = "none";
+
     }
     else {
         divId = document.getElementById('div-level');
@@ -19,6 +22,9 @@ function formOnChange(select) {
 
         table = document.getElementById('data');
         table.style.display = "";
+
+        table2 = document.getElementById('data_students');
+        table2.style.display = "";
 
         listGroup(link_group);
     }
@@ -91,7 +97,7 @@ function listGroup(link_group) {
                 fila.insertCell().innerHTML = data[i].id;
                 fila.insertCell().innerHTML = data[i].level;
                 fila.insertCell().innerHTML = `
-            <button onclick="goedit(${data[i].id})" type="button">Editar</button> | <button type="button" onclick="deleteGroup(${data[i].id})" >borrar</button>
+            <button onclick="goedit(${data[i].id})" type="button">Editar</button> | <button type="button" onclick="deleteGroup(${data[i].id})" >Borrar</button> | <button type="button" onclick="getStudentbyGroup('${data[i].level}')" >Ver Integrantes</button>
             `;
             }
         });
@@ -118,3 +124,23 @@ function goedit(id) {
     window.location.href = "editar.html?id=" + id;
 }
 
+let link_student = 'https://61cd1a30198df60017aec2d4.mockapi.io/api/v1/student';
+
+function getStudentbyGroup(group) {
+   let group_id = group;
+   console.log(link_student + `?levelGroup=${group_id}`);
+    const t_body = document.getElementById('list_students');
+    fetch(link_student + `?levelGroup=${group_id}`)
+        .then(response => response.json())
+        .then(data => {
+             console.log(data);
+            t_body.innerHTML = '';
+            for (let i = 0; i < data.length; i++) {
+                let fila = t_body.insertRow();
+                fila.insertCell().innerHTML = data[i].identification;
+                fila.insertCell().innerHTML = data[i].firstName + ' ' + data[i].secondName + ' ' + data[i].lastName + ' ' + data[i].secondLastName;
+                fila.insertCell().innerHTML = `
+            `;
+            }
+        });
+}

@@ -61,7 +61,27 @@ function addCourse() {
         });
 }
 
-function getCourse() {
+function deleteCourse(id) {
+    fetch(link_courses + '/' + id, {
+        method: 'DELETE',
+        headers: {
+            Accept: "application/json, text/plain, */*",
+            "Content-Type": "application/json",
+        },
+    })
+        .then(data => {
+            if (data.status == 200) {
+                alert('Curso eliminado con exito');
+                window.location.href = 'index.html';
+            }
+        }).catch(err => {
+            console.log(err);
+            alert('Error al eliminar el curso');
+        });
+}
+
+
+window.onload = function () {
     const tbody = document.getElementById('list');
     fetch(link_courses)
         .then(response => response.json())
@@ -69,11 +89,12 @@ function getCourse() {
             tbody.innerHTML = '';
             for (let i = 0; i < data.length; i++) {
                 let fila = tbody.insertRow();
-                fila.insertCell().innerHTML = data[i].identification;
-                fila.insertCell().innerHTML = data[i].firstName + ' ' + data[i].secondName + ' ' + data[i].lastName + ' ' + data[i].secondLastName;
+                fila.insertCell().innerHTML = data[i].title;
+                fila.insertCell().innerHTML = data[i].hourlyIntensity;
                 fila.insertCell().innerHTML = `
-            <button onclick="goedit(${data[i].id})" type="button">Editar</button> | <button type="button" onclick="deleteProfessor(${data[i].id})" >borrar</button>
+                <button type="button" onclick="deleteCourse(${data[i].id})" >Borrar</button>
             `;
             }
         });
 }
+

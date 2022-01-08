@@ -142,7 +142,7 @@ function listStudent(link_student) {
                 fila.insertCell().innerHTML = data[i].identification;
                 fila.insertCell().innerHTML = data[i].firstName + ' ' + data[i].secondName + ' ' + data[i].lastName + ' ' + data[i].secondLastName;
                 fila.insertCell().innerHTML = `
-            <button onclick="goedit(${data[i].id})" type="button">Editar</button> | <button type="button" onclick="deleteStudent(${data[i].id})" >borrar</button>
+            <button onclick="goedit(${data[i].id})" type="button">Editar</button> | <button type="button" onclick="deleteStudent(${data[i].id})" >Borrar</button>
             `;
             }
         });
@@ -155,8 +155,6 @@ function deleteStudent(id) {
         .then((response) => {
             console.log(response.status);
             if (response.status == 200) {
-                // let tbody = document.getElementById('list');
-                // tbody.removeChild(tbody.childNodes[id]);
                 alert('Se ha eliminado correctamente');
             }
         })

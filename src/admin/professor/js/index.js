@@ -66,30 +66,33 @@ const formProfessor = {
 
 const link = 'https://61cd235c198df60017aec2ee.mockapi.io/Professor';
 
+
+
 function addProfessor() {
+
+    let data = {
+        identification: formProfessor.id.value,
+        firstName: formProfessor.firstName.value,
+        secondName: formProfessor.secondName.value,
+        lastName: formProfessor.lastName.value,
+        secondLastName: formProfessor.secondLastName.value,
+        email: formProfessor.email.value,
+        password: formProfessor.id.value,
+    };
     fetch(link, {
         method: 'POST',
         headers: {
             Accept: "application/json, text/plain, */*",
             "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-            identification: formProfessor.id.value,
-            firstName: formProfessor.firstName.value,
-            secondName: formProfessor.secondName.value,
-            lastName: formProfessor.lastName.value,
-            secondLastName: formProfessor.secondLastName.value,
-            email: formProfessor.email.value,
-            password: formProfessor.id.value,
-        }),
+        body: JSON.stringify(data),
 
+    }).then((response) => {
+        if (response.status == 201) {
+            alert('Se ha creado correctamente');
+            window.location.href = "index.html";
+        }
     })
-        .then((response) => {
-            if (response.status == 201) {
-                alert('Se ha creado correctamente');
-                window.location.href = "index.html";
-            }
-        })
         .catch((err) => {
             console.log(err);
             alert('No se ha podido crear');
@@ -164,21 +167,27 @@ function goedit(id) {
     window.location.href = "editar.html?id=" + id;
 }
 
+function validationProfessor(){
+    if(formProfessor.id.value == ''){
+        alert('No puede dejar el campo de identificación vacío');
+        return false;
+    }
+    if(formProfessor.firstName.value == ''){
+        alert('No puede dejar el campo de nombre vacío');
+        return false;
+    }
+    if(formProfessor.lastName.value == ''){
+        alert('No puede dejar el campo de apellido vacío');
+        return false;
+    }
+    if(formProfessor.email.value == ''){
+        alert('No puede dejar el campo de correo vacío');
+        return false;
+    }
+    if(formProfessor.email.value.indexOf('@') == -1){
+        alert('El correo no es válido');
+        return false;
+    }
+    return true;
+}
 
-/* let formbuttonProfessor = form.submit.addEventListener('click', (e) => {
-    e.preventDefault();
-    const login = 'https://61cd235c198df60017aec2ee.mockapi.io/Professor';
-
-    fetch(login, {
-        method: 'GET',
-        body: JSON.stringify({
-            email: form.email.value,
-            password: form.password.value,
-        }),
-    })
-        .then((response) => response.json())
-        .then((data) => console.log(data))
-        .catch((err) => {
-            console.log(err);
-        });
-}) */

@@ -68,7 +68,7 @@
                 Modo oscuro
                 <div class="dark-img"></div>
               </button>
-              <a href="../index.html">Salir</a>
+              <button onclick="closeSesion()">Salir</button>
             </div>
           </div>
         </div>
@@ -88,9 +88,7 @@
       <div class="tab"><a href="./courses/index.html">Cursos</a></div>
       <div class="tab"><a href="./group/index.html">Grupos</a></div>
     </div>
-    <main>
-        
-    </main>
+    <main></main>
     <footer>
       <div>
         <svg id="footer-logo" viewBox="0 0 331 335">
@@ -105,5 +103,21 @@
     <script src="../student/js/sticky.js"></script>
     <script src="../js/toggleTheme.js"></script>
     <script src="../student/js/dropdown.js"></script>
+    <script>
+      window.onload = function () {
+        accessDenied()
+      }
+
+      function accessDenied() {
+        if (sessionStorage.getItem('user') == null) {
+          window.location.href = './error.html'
+        }
+      }
+
+      function closeSesion() {
+        sessionStorage.clear();
+        window.location.href = '../login.html'
+      }
+    </script>
   </body>
 </html>

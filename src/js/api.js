@@ -26,6 +26,7 @@ let button = form.submit.addEventListener('click', (e) => {
             if (form.identification.value === data[i].identification && form.password.value === data[i].password){
                 window.location.href = "./admin/index.html";
                 console.log("Login Successful");
+                sessionStorage['user'] = form.identification.value;
                 break;
             }else{
                 alert("Error Password or Username");

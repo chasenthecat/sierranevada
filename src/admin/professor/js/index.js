@@ -1,3 +1,4 @@
+
 function formOnChange(select) {
   if (select.value == 'crear') {
     divId = document.getElementById('div-id')
@@ -194,3 +195,7 @@ function deleteProfessor(id) {
 function goedit(id) {
   window.location.href = 'editar.html?id=' + id
 }
+
+var names = sessionStorage.getItem('user');
+
+console.log(names);

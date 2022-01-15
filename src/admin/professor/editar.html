@@ -75,7 +75,7 @@
                 Modo oscuro
                 <div class="dark-img"></div>
               </button>
-              <a href="../../index.html">Salir</a>
+              <button class="dropdownn-salir" onclick="closeSesion()">Salir</button>
             </div>
           </div>
         </div>
@@ -176,5 +176,21 @@
         });
     </script>
     <script src="../../js/accessDenied.js"></script>
+    <script>
+      window.onload = function () {
+        accessDenied()
+      }
+
+      function accessDenied() {
+        if (sessionStorage.getItem('user') == null) {
+          window.location.href = '../error.html'
+        }
+      }
+
+      function closeSesion() {
+        sessionStorage.clear();
+        window.location.href = '../../../login.html'
+      }
+    </script>
   </body>
 </html>

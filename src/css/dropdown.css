@@ -65,3 +65,16 @@ button#theme-toggler {
   background: var(--hover);
   border-radius: 10px;
 }
+
+.dropdownn-salir{
+  background-color: transparent;
+  padding: 0px;
+  margin: 0px;
+  box-shadow: none;
+  width: 100%;
+}
+
+.dropdownn-salir:hover{
+  background: var(--hover);
+  border-radius: 10px;
+}

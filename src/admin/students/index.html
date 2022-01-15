@@ -185,5 +185,21 @@
     <script src="../../js/toggleTheme.js"></script>
     <script src="../../student/js/dropdown.js"></script>
     <script src="../../js/accessDenied.js"></script>
+    <script>
+      window.onload = function () {
+        accessDenied()
+      }
+
+      function accessDenied() {
+        if (sessionStorage.getItem('user') == null) {
+          window.location.href = '../error.html'
+        }
+      }
+
+      function closeSesion() {
+        sessionStorage.clear();
+        window.location.href = '../../../login.html'
+      }
+    </script>
   </body>
 </html>

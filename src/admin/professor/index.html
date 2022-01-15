@@ -112,7 +112,7 @@
           <option value="eliminar">Listar</option>
         </select>
       </div>
-      <form class="form-container" onsubmit="return validationProfessor()">
+      <form class="form-container">
         <div class="input-container" id="div-id" style="display: ''">
           <label for="name">Identificacion</label>
           <input type="text" id="identification" required />
@@ -142,7 +142,7 @@
           <input type="text" id="second-last-name" required />
         </div>
         <div id="btn1" style="display: inherit">
-          <button id="btn-submit" onclick="addProfessor()">Enviar</button>
+          <button id="btn-submit" type="submit">Enviar</button>
         </div>
       </form>
       <div id="data" style="display: none">

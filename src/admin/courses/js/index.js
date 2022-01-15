@@ -1,5 +1,5 @@
 function formOnChange(select) {
-    if (select.value == 'crear') {
+    if (select.value === 'crear') {
 
         divTitle = document.getElementById('div-title');
         divTitle.style.display = "";
@@ -7,7 +7,7 @@ function formOnChange(select) {
         divFirstName = document.getElementById('div-hourlyIntensity');
         divFirstName.style.display = "";
 
-        btn = document.getElementById('btn');
+        btn = document.getElementById('btn-submit');
         btn.style.display = "";
 
         divData = document.getElementById('data');
@@ -20,12 +20,12 @@ function formOnChange(select) {
         divFirstName = document.getElementById('div-hourlyIntensity');
         divFirstName.style.display = "none";
 
-        btn = document.getElementById('btn');
+        btn = document.getElementById('btn-submit');
         btn.style.display = "none";
 
         divData = document.getElementById('data');
         divData.style.display = "";
-        
+
     }
 }
 
@@ -37,29 +37,54 @@ const formCourse = {
     hourlyIntensity: document.getElementById('hourlyIntensity'),
 }
 
-function addCourse() {
+document.getElementById('btn-submit').addEventListener('click', async (e) => {
+    e.preventDefault()
+    await addCourse()
+  })
+  
 
-    fetch(link_courses, {
-        method: 'POST',
-        headers: {
-            Accept: "application/json, text/plain, */*",
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-            title: formCourse.title.value,
-            hourlyIntensity: formCourse.hourlyIntensity.value,
-        }),
-    })
-        .then(data => {
-            if (data.status == 201) {
-                alert('Curso creado con exito');
-                window.location.href = 'index.html';
-            }
-        }).catch(err => {
-            console.log(err);
-            alert('Error al crear el curso');
-        });
+async function addCourse() {
+
+    let data = {
+        title: formCourse.title.value,
+        hourlyIntensity: formCourse.hourlyIntensity.value,
+      }
+      let response
+    try {
+        if (!validateCourses(data)) {
+            throw new Error('Corrige los datos.')
+        } else {
+            const body = JSON.stringify(data)
+            response = await fetch(link_courses, {
+                method: 'POST',
+                headers: {
+                    Accept: 'application/json, text/plain, */*',
+                    'Content-Type': 'application/json',
+                },
+                body,
+            })
+        }
+    } catch (err) {
+        alert(err)
+    }
+    if (response?.status == 201) {
+        alert('Curso creado con exito');
+        window.location.href = 'index.html';
+    }
+
 }
+
+function validateCourses(args) {
+    if (args.title === '') {
+      alert('No puede dejar el campo de titulo vacío')
+      return false
+    }
+    if (args.hourlyIntensity === '') {
+      alert('No puede dejar el campo de Intensidad Horaria vacío')
+      return false
+    }
+    return true
+  }
 
 function deleteCourse(id) {
     fetch(link_courses + '/' + id, {

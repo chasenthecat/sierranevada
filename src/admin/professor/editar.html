@@ -60,15 +60,8 @@
         </a>
         <div id="user">
           <div class="dropdownn">
-            <button class="dropbtn" onclick="toggleDropdown()">
-              flipper
-              <svg viewBox="0 0 24 24">
-                <g>
-                  <path
-                    d="M12 16a1 1 0 0 1-.64-.23l-6-5a1 1 0 1 1 1.28-1.54L12 13.71l5.36-4.32a1 1 0 0 1 1.41.15 1 1 0 0 1-.14 1.46l-6 4.83A1 1 0 0 1 12 16z"
-                  />
-                </g>
-              </svg>
+            <button class="dropbtn" onclick="toggleDropdown()" id="btnD">
+
             </button>
             <div class="dropdown-content" id="myDropdown">
               <button id="theme-toggler">
@@ -191,6 +184,13 @@
         sessionStorage.clear();
         window.location.href = '../../../login.html'
       }
+      document.getElementById('btnD').innerHTML = sessionStorage.getItem('ussername') + `<svg viewBox="0 0 24 24">
+                <g>
+                  <path
+                    d="M12 16a1 1 0 0 1-.64-.23l-6-5a1 1 0 1 1 1.28-1.54L12 13.71l5.36-4.32a1 1 0 0 1 1.41.15 1 1 0 0 1-.14 1.46l-6 4.83A1 1 0 0 1 12 16z"
+                  />
+                </g>
+              </svg>`;
     </script>
   </body>
 </html>

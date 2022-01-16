@@ -101,13 +101,13 @@
 
       function accessDenied() {
         if (sessionStorage.getItem('user') == null) {
-          window.location.href = './error.html'
+          window.location.href = '../error.html'
         }
       }
 
       function closeSesion() {
         sessionStorage.clear();
-        window.location.href = '../login.html'
+        window.location.href = '../../login.html'
       }
 
       document.getElementById('btnD').innerHTML = sessionStorage.getItem('ussername') + `<svg viewBox="0 0 24 24">

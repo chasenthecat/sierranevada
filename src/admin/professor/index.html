@@ -138,6 +138,10 @@
           <label for="name">Segundo Apellido</label>
           <input type="text" id="second-last-name" required />
         </div>
+        <div class="input-container" id="div-level-group" style="display: ''">
+          <label for="name" >Grupo</label>
+          <select id="levelGroup"></select>
+        </div>
         <div id="btn1" style="display: inherit">
           <button id="btn-submit" type="submit">Enviar</button>
         </div>
@@ -175,7 +179,8 @@
     <script src="../../js/accessDenied.js"></script>
     <script>
       window.onload = function () {
-        accessDenied()
+        accessDenied();
+        listGroup();
       }
 
       function accessDenied() {

@@ -136,6 +136,7 @@
           <select id="levelGroup" >
         </select>
         </div>
+      
         <div id="btn1" style="display: inherit">
           <button id="btn-submit" onclick="updateStudent(myParam)">Enviar</button>
         </div>
@@ -181,7 +182,8 @@
     <script src="../../js/accessDenied.js"></script>
     <script>
       window.onload = function () {
-        accessDenied()
+        accessDenied();
+        listGroup();
       }
 
       function accessDenied() {

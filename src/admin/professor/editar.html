@@ -61,7 +61,6 @@
         <div id="user">
           <div class="dropdownn">
             <button class="dropbtn" onclick="toggleDropdown()" id="btnD">
-
             </button>
             <div class="dropdown-content" id="myDropdown">
               <button id="theme-toggler">
@@ -127,9 +126,14 @@
           <label for="name">Segundo Apellido</label>
           <input type="text" id="second-last-name" />
         </div>
-        <div id="btn1" style="display: inherit">
-          <button id="btn-submit" onclick="updateProfessor(myParam)">Enviar</button>
+        <div class="input-container" id="div-level-group" style="display: ''">
+          <label for="name" >Grupo</label>
+          <select id="levelGroup"></select>
         </div>
+        <div id="btn1" style="display: inherit">
+          <button id="btn-update" onclick="updateProfessor(myParam)">Enviar</button>
+        </div>
+        <button id="btn-submit" style="display: none"></button>
       </div>
     </main>
     <footer>
@@ -166,12 +170,14 @@
           document.getElementById("second-name").value = data.secondName;
           document.getElementById("last-name").value = data.lastName;
           document.getElementById("second-last-name").value = data.secondLastName;
+          document.getElementById("levelGroup").value = data.levelGroup;
         });
     </script>
     <script src="../../js/accessDenied.js"></script>
     <script>
       window.onload = function () {
-        accessDenied()
+        accessDenied();
+        listGroup();
       }
 
       function accessDenied() {

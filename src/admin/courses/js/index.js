@@ -26,6 +26,7 @@ function formOnChange(select) {
         divData = document.getElementById('data');
         divData.style.display = "";
 
+        listCourses(link_courses);
     }
 }
 
@@ -106,11 +107,12 @@ function deleteCourse(id) {
 }
 
 
-window.onload = function () {
+function listCourses() {
     const tbody = document.getElementById('list');
     fetch(link_courses)
         .then(response => response.json())
         .then(data => {
+            console.log(data);
             tbody.innerHTML = '';
             for (let i = 0; i < data.length; i++) {
                 let fila = tbody.insertRow();

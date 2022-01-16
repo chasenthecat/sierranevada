@@ -97,7 +97,7 @@ function listGroup(link_group) {
                 fila.insertCell().innerHTML = data[i].id;
                 fila.insertCell().innerHTML = data[i].level;
                 fila.insertCell().innerHTML = `
-            <button onclick="goedit(${data[i].id})" type="button">Editar</button> | <button type="button" onclick="deleteGroup(${data[i].id})" >Borrar</button> | <button type="button" onclick="getStudentbyGroup('${data[i].level}')" >Ver Integrantes</button>
+            <button type="button" onclick="deleteGroup(${data[i].id})" >Borrar</button> | <button type="button" onclick="getStudentbyGroup('${data[i].level}')" >Ver Integrantes</button>
             `;
             }
         });

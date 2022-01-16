@@ -141,14 +141,9 @@
           <label for="name">Segundo Apellido</label>
           <input type="text" id="second-last-name" />
         </div>
-        <div
-          class="input-container"
-          id="div-level-group"
-          style="display: ''"
-        >
-        <label for="name">Grado</label>
-          <select id="levelGroup" >
-        </select>
+        <div class="input-container" id="div-level-group" style="display: ''">
+          <label for="name" >Grupo</label>
+          <select id="levelGroup"></select>
         </div>
         <div id="btn1" style="display: inherit">
           <button id="btn-submit" onclick="addStudent()">Enviar</button>
@@ -187,7 +182,8 @@
     <script src="../../js/accessDenied.js"></script>
     <script>
       window.onload = function () {
-        accessDenied()
+        accessDenied();
+        listGroup();
       }
 
       function accessDenied() {
@@ -197,7 +193,7 @@
       }
 
       function closeSesion() {
-        sessionStorage.clear();
+        sessionStorage.clear()
         window.location.href = '../../../login.html'
       }
     </script>

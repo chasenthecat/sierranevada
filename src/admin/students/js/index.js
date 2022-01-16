@@ -166,7 +166,7 @@ function goedit(id) {
 
 const link_groups = 'https://61cd1a30198df60017aec2d4.mockapi.io/api/v1/group';
 
-window.onload = function () {
+function listGroup() {
     const select = document.getElementById('levelGroup');
     fetch(link_groups)
         .then(response => response.json())

@@ -8,11 +8,13 @@ const form = {
 let button = form.submit.addEventListener('click', (e) => {
     e.preventDefault();
     let login = "";
-    console.log(form.rol.value);
+    let rol = "";
     if (form.rol.value === 'value3') {
         login = 'https://61cd235c198df60017aec2ee.mockapi.io/Admins';
+        rol = "./admin/index.html"
     }else if (form.rol.value === 'value2') {
         login = 'https://61cd235c198df60017aec2ee.mockapi.io/Professor';
+        rol = "./professor/index.html"
     }
 
     fetch(login, {
@@ -24,9 +26,11 @@ let button = form.submit.addEventListener('click', (e) => {
 
         for (let i in data) {
             if (form.identification.value === data[i].identification && form.password.value === data[i].password){
-                window.location.href = "./admin/index.html";
+                window.location.href = rol;
                 console.log("Login Successful");
                 sessionStorage['user'] = form.identification.value;
+                sessionStorage['rol'] = form.rol.value;
+                sessionStorage['ussername'] = data[i].firstName + " " + data[i].lastName;
                 break;
             }else{
                 alert("Error Password or Username");

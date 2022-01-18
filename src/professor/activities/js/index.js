@@ -173,3 +173,31 @@ document.getElementById('btn-submit').addEventListener('click', async (e) => {
     e.preventDefault()
     await addActivity()
 })
+
+function goedit(id) {
+    window.location.href = 'editar.html?id=' + id
+}
+
+function updateActivity(id) {
+    fetch('https://61cd1a30198df60017aec2d4.mockapi.io/api/v1/activity' + `/${id}`, {
+      method: 'PUT',
+      headers: {
+        Accept: 'application/json, text/plain, */*',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        descripcion: formActividad.descripcion.value,
+        materia: formActividad.materia.value,
+        grupo: formActividad.grupo.value,
+      }),
+    })
+      .then((response) => {
+        if (response.status == 200) {
+          alert('Se ha actualizado correctamente')
+          window.location.href = 'index.html'
+        }
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+  }

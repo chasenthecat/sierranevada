@@ -130,6 +130,10 @@
           <label for="name" >Grupo</label>
           <select id="levelGroup"></select>
         </div>
+        <div class="input-container" id="div-materia" style="display: ''">
+          <label for="pMateria" >Materia</label>
+          <select id="pMateria"></select>
+        </div>
         <div id="btn1" style="display: inherit">
           <button id="btn-update" onclick="updateProfessor(myParam)">Enviar</button>
         </div>
@@ -171,6 +175,7 @@
           document.getElementById("last-name").value = data.lastName;
           document.getElementById("second-last-name").value = data.secondLastName;
           document.getElementById("levelGroup").value = data.levelGroup;
+          document.getElementById("pMateria").value = data.materia;
         });
     </script>
     <script src="../../js/accessDenied.js"></script>
@@ -178,6 +183,7 @@
       window.onload = function () {
         accessDenied();
         listGroup();
+        listMateria();
       }
 
       function accessDenied() {
@@ -188,7 +194,7 @@
 
       function closeSesion() {
         sessionStorage.clear();
-        window.location.href = '../../../login.html'
+        window.location.href = '../../login.html'
       }
       document.getElementById('btnD').innerHTML = sessionStorage.getItem('ussername') + `<svg viewBox="0 0 24 24">
                 <g>

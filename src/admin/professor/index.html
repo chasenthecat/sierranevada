@@ -142,6 +142,10 @@
           <label for="name" >Grupo</label>
           <select id="levelGroup"></select>
         </div>
+        <div class="input-container" id="div-materia" style="display: ''">
+          <label for="pMateria" >Materia</label>
+          <select id="pMateria"></select>
+        </div>
         <div id="btn1" style="display: inherit">
           <button id="btn-submit" type="submit">Enviar</button>
         </div>
@@ -181,6 +185,7 @@
       window.onload = function () {
         accessDenied();
         listGroup();
+        listMateria();
       }
 
       function accessDenied() {
@@ -191,7 +196,7 @@
 
       function closeSesion() {
         sessionStorage.clear()
-        window.location.href = '../../../login.html'
+        window.location.href = '../../login.html'
       }
       document.getElementById('btnD').innerHTML =
         sessionStorage.getItem('ussername') +

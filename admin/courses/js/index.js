@@ -36,6 +36,8 @@ let link_courses = 'https://61cd1a30198df60017aec2d4.mockapi.io/api/v1/course';
 const formCourse = {
     title: document.getElementById('title'),
     hourlyIntensity: document.getElementById('hourlyIntensity'),
+    idProfessor: document.getElementById('cProfesor'),
+    levelGroup: document.getElementById('levelGroup'),
 }
 
 document.getElementById('btn-submit').addEventListener('click', async (e) => {
@@ -49,6 +51,8 @@ async function addCourse() {
     let data = {
         title: formCourse.title.value,
         hourlyIntensity: formCourse.hourlyIntensity.value,
+        idProfessor: formCourse.idProfessor.value,
+        levelGroup: formCourse.levelGroup.value,
       }
       let response
     try {
@@ -125,3 +129,43 @@ function listCourses() {
         });
 }
 
+function listProfesor() {
+    const select = document.getElementById('cProfesor');
+    fetch('https://61cd235c198df60017aec2ee.mockapi.io/Professor')
+        .then(response => response.json())
+        .then(data => {
+            for (let i = 0; i < data.length; i++) {
+                if (i == 0) {
+                    let option = document.createElement('option');
+                    option.value = '';
+                    option.innerHTML = 'Seleccionar un Profesor';
+                    select.appendChild(option);
+                }
+                let option = document.createElement('option');
+                option.value = data[i].identification;
+                option.innerHTML = data[i].firstName + ' ' + data[i].secondName + ' ' + data[i].lastName + ' ' + data[i].secondLastName;
+                select.appendChild(option);
+            }
+        });
+  }
+
+
+  function listGroup() {
+    const select = document.getElementById('levelGroup');
+    fetch('https://61cd1a30198df60017aec2d4.mockapi.io/api/v1/group')
+        .then(response => response.json())
+        .then(data => {
+            for (let i = 0; i < data.length; i++) {
+                if (i == 0) {
+                    let option = document.createElement('option');
+                    option.value = '';
+                    option.innerHTML = 'Seleccionar un Grupo';
+                    select.appendChild(option);
+                }
+                let option = document.createElement('option');
+                option.value = data[i].level;
+                option.innerHTML = data[i].level;
+                select.appendChild(option);
+            }
+        });
+  }

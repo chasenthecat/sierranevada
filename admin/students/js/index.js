@@ -24,6 +24,9 @@ function formOnChange(select) {
         table = document.getElementById('data');
         table.style.display = "none";
 
+        levelForm = document.getElementById('div-level-group');
+        levelForm.style.display = "";
+
     }
     else {
         divId = document.getElementById('div-id');

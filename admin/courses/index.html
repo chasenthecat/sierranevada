@@ -104,6 +104,14 @@
             <label for="name">Intensidad Horaria</label>
             <input type="text" id="hourlyIntensity" />
           </div>
+          <div class="input-container" id="div-level-group" style="display: ''">
+            <label for="name" >Grupo</label>
+            <select id="levelGroup"></select>
+          </div>
+          <div class="input-container" id="div-materia" style="display: ''">
+            <label for="cProfesor" >Profesor</label>
+            <select id="cProfesor"></select>
+          </div>
           <button id="btn-submit" type="submit">Enviar</button>
       </div>
       <div id="data" style="display: none">
@@ -139,6 +147,8 @@
     <script>
       window.onload = function () {
         accessDenied()
+        listProfesor()
+        listGroup()
       }
 
       function accessDenied() {
@@ -149,7 +159,7 @@
 
       function closeSesion() {
         sessionStorage.clear();
-        window.location.href = '../../../login.html'
+        window.location.href = '../../login.html'
       }
       document.getElementById('btnD').innerHTML = sessionStorage.getItem('ussername') + `<svg viewBox="0 0 24 24">
                 <g>

@@ -24,6 +24,13 @@ function formOnChange(select) {
 
     table = document.getElementById('data')
     table.style.display = 'none'
+
+    levelForm = document.getElementById('div-level-group');
+    levelForm.style.display = "";
+
+    levelForm = document.getElementById('div-materia');
+    levelForm.style.display = "";
+
   } else {
     divId = document.getElementById('div-id')
     divId.style.display = 'none'
@@ -49,6 +56,13 @@ function formOnChange(select) {
     table = document.getElementById('data')
     table.style.display = ''
 
+    levelForm = document.getElementById('div-level-group');
+    levelForm.style.display = "none";
+
+    levelForm = document.getElementById('div-materia');
+    levelForm.style.display = "none";
+    //div-materia
+
     listProfessor(link)
   }
 }
@@ -61,6 +75,8 @@ const formProfessor = {
   secondName: document.getElementById('second-name'),
   lastName: document.getElementById('last-name'),
   secondLastName: document.getElementById('second-last-name'),
+  level: document.getElementById('levelGroup'),
+  materia: document.getElementById('pMateria'),
 }
 
 const link = 'https://61cd235c198df60017aec2ee.mockapi.io/Professor'
@@ -86,6 +102,10 @@ function validateProfessor(args) {
     alert('El correo no es válido')
     return false
   }
+  if(args.levelGroup === ''){
+    alert('No puede dejar el campo del grupo vacío')
+    return false
+  }
   return true
 }
 
@@ -98,6 +118,8 @@ async function addProfessor() {
     secondLastName: formProfessor.secondLastName.value,
     email: formProfessor.email.value,
     password: formProfessor.id.value,
+    levelGroup: formProfessor.level.value,
+    materia: formProfessor.materia.value,
   }
   let response
   try {
@@ -144,6 +166,8 @@ function updateProfessor(id) {
       secondLastName: formProfessor.secondLastName.value,
       email: formProfessor.email.value,
       password: formProfessor.id.value,
+      levelGroup: formProfessor.level.value,
+      materia: formProfessor.materia.value,
     }),
   })
     .then((response) => {
@@ -192,10 +216,49 @@ function deleteProfessor(id) {
   })
 }
 
+
+const link_groupsP = 'https://61cd1a30198df60017aec2d4.mockapi.io/api/v1/group';
+
+function listGroup() {
+  const select = document.getElementById('levelGroup');
+  fetch(link_groupsP)
+      .then(response => response.json())
+      .then(data => {
+          for (let i = 0; i < data.length; i++) {
+              if (i == 0) {
+                  let option = document.createElement('option');
+                  option.value = '';
+                  option.innerHTML = 'Seleccionar un Grupo';
+                  select.appendChild(option);
+              }
+              let option = document.createElement('option');
+              option.value = data[i].level;
+              option.innerHTML = data[i].level;
+              select.appendChild(option);
+          }
+      });
+}
+
+function listMateria() {
+  const select = document.getElementById('pMateria');
+  fetch('https://61cd1a30198df60017aec2d4.mockapi.io/api/v1/course')
+      .then(response => response.json())
+      .then(data => {
+          for (let i = 0; i < data.length; i++) {
+              if (i == 0) {
+                  let option = document.createElement('option');
+                  option.value = '';
+                  option.innerHTML = 'Seleccionar un Materia';
+                  select.appendChild(option);
+              }
+              let option = document.createElement('option');
+              option.value = data[i].id;
+              option.innerHTML = data[i].title;
+              select.appendChild(option);
+          }
+      });
+}
+
 function goedit(id) {
   window.location.href = 'editar.html?id=' + id
 }
-
-var names = sessionStorage.getItem('user');
-
-console.log(names);

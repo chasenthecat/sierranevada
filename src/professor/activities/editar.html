@@ -116,6 +116,7 @@
         <div id="btn1" style="display: inherit">
           <button id="btn-update" onclick="updateActivity(myParam)">Enviar</button>
         </div>
+        <button id="btn-submit" style="display: none"></button>
       </form>
     </main>
     <footer>
@@ -147,8 +148,8 @@
           console.log(data);
           document.getElementById("id").value = data.id;
           document.getElementById("actividad").value = data.descripcion;
-          document.getElementById("levelGroup").value = data.email;
-          document.getElementById("pMateria").value = data.firstName;
+          document.getElementById("levelGroup").value = data.grupo;
+          document.getElementById("pMateria").value = data.materia;
         });
     </script>
     <script>

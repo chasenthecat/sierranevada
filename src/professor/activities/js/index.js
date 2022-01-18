@@ -179,6 +179,7 @@ function goedit(id) {
 }
 
 function updateActivity(id) {
+    console.log(id)
     fetch('https://61cd1a30198df60017aec2d4.mockapi.io/api/v1/activity' + `/${id}`, {
       method: 'PUT',
       headers: {
@@ -187,8 +188,8 @@ function updateActivity(id) {
       },
       body: JSON.stringify({
         descripcion: formActividad.descripcion.value,
-        materia: formActividad.materia.value,
         grupo: formActividad.grupo.value,
+        materia: formActividad.materia.value,
       }),
     })
       .then((response) => {
@@ -199,5 +200,7 @@ function updateActivity(id) {
       })
       .catch((err) => {
         console.log(err)
+        alert('Error al actualizar')
+          window.location.href = 'index.html'
       })
   }

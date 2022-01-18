@@ -87,7 +87,9 @@
     </header>
     <div class="tabs" id="tabs">
       <div class="tab"><a href="../index.html">Inicio</a></div>
-      <div class="tab selected"><a href="../activities/index.html">Actividades</a></div>
+      <div class="tab selected">
+        <a href="../activities/index.html">Actividades</a>
+      </div>
       <div class="tab"><a href="../students/index.html">Estudiantes</a></div>
     </div>
     <main>
@@ -99,22 +101,24 @@
       <form class="form-container">
         <div class="input-container" id="div-data-id" style="display: ''">
           <label for="name">Data ID</label>
-          <input type="text" id="id" readonly/>
+          <input type="text" id="id" readonly />
         </div>
         <div class="mb-3" style="display: ''" id="div-actividad">
-          <label for="actividad" class="form-label">Descripción de la actividad</label>
-          <textarea class="form-control" id="actividad" rows="3" ></textarea>
+          <label for="actividad" class="form-label"
+            >Descripción de la actividad</label
+          >
+          <textarea class="form-control" id="actividad" rows="3"></textarea>
         </div>
         <div class="input-container" id="div-level-group" style="display: ''">
-          <label for="name" >Grupo</label>
+          <label for="name">Grupo</label>
           <select id="levelGroup"></select>
         </div>
         <div class="input-container" id="div-materia" style="display: ''">
-          <label for="pMateria" >Materia</label>
+          <label for="pMateria">Materia</label>
           <select id="pMateria"></select>
         </div>
         <div id="btn1" style="display: inherit">
-          <button id="btn-update" onclick="updateActivity(myParam)">Enviar</button>
+          <button id="btn-update">Enviar</button>
         </div>
         <button id="btn-submit" style="display: none"></button>
       </form>
@@ -136,27 +140,34 @@
     <script src="../../student/js/dropdown.js"></script>
     <script src="../../js/accessDenied.js"></script>
     <script>
-      const urlParams = new URLSearchParams(window.location.search);
-      const myParam = urlParams.get('id');
-      const url = 'https://61cd1a30198df60017aec2d4.mockapi.io/api/v1/activity';
+      const urlParams = new URLSearchParams(window.location.search)
+      const myParam = urlParams.get('id')
+      const url = 'https://61cd1a30198df60017aec2d4.mockapi.io/api/v1/activity'
 
-      console.log(myParam);
+      console.log(myParam)
 
-      fetch(url + "/" + myParam)
+      document
+        .getElementById('btn-update')
+        .addEventListener('click', async (e) => {
+          e.preventDefault()
+          await updateActivity(myParam)
+        })
+
+      fetch(url + '/' + myParam)
         .then((response) => response.json())
         .then((data) => {
-          console.log(data);
-          document.getElementById("id").value = data.id;
-          document.getElementById("actividad").value = data.descripcion;
-          document.getElementById("levelGroup").value = data.grupo;
-          document.getElementById("pMateria").value = data.materia;
-        });
+          console.log(data)
+          document.getElementById('id').value = data.id
+          document.getElementById('actividad').value = data.descripcion
+          document.getElementById('levelGroup').value = data.grupo
+          document.getElementById('pMateria').value = data.materia
+        })
     </script>
     <script>
-       window.onload = function () {
-        accessDenied();
-        listGroup();
-        listMateria();
+      window.onload = function () {
+        accessDenied()
+        listGroup()
+        listMateria()
       }
 
       function accessDenied() {

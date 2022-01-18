@@ -174,6 +174,8 @@ document.getElementById('btn-submit').addEventListener('click', async (e) => {
     await addActivity()
 })
 
+
+
 function goedit(id) {
     window.location.href = 'editar.html?id=' + id
 }
@@ -195,12 +197,12 @@ function updateActivity(id) {
       .then((response) => {
         if (response.status == 200) {
           alert('Se ha actualizado correctamente')
-          window.location.href = 'index.html'
+          window.location.href = './index.html'
         }
       })
       .catch((err) => {
         console.log(err)
         alert('Error al actualizar')
-          window.location.href = 'index.html'
+          window.location.href = './index.html'
       })
   }

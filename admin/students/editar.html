@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Sierra Nevada Education: Redefine la educacion virtual"
+    />
+    <meta
+      name="keywords"
+      content="educacion virtual tecnologia institucion educativa"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../../static/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../../static/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../../static/favicon-16x16.png"
+    />
+    <link rel="manifest" href="../../static/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="../static/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+    <title>Dashboard - Sierra Nevada Education</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../../css/normalize.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../student/css/style.css" />
+    <link rel="stylesheet" href="../../student/css/responsive.css" />
+    <link rel="stylesheet" href="../../css/dropdown.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="./index.html">
+          <div id="logo"></div>
+        </a>
+        <div id="user">
+          <div class="dropdownn">
+            <button class="dropbtn" onclick="toggleDropdown()" id="btnD">
+
+            </button>
+            <div class="dropdown-content" id="myDropdown">
+              <button id="theme-toggler">
+                Modo oscuro
+                <div class="dark-img"></div>
+              </button>
+              <a href="../../index.html">Salir</a>
+            </div>
+          </div>
+        </div>
+        <svg viewBox="0 0 24 24">
+          <g>
+            <path
+              d="m20.71 19.29-3.4-3.39A7.92 7.92 0 0 0 19 11a8 8 0 1 0-8 8 7.92 7.92 0 0 0 4.9-1.69l3.39 3.4a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42zM5 11a6 6 0 1 1 6 6 6 6 0 0 1-6-6z"
+            />
+          </g>
+        </svg>
+      </nav>
+    </header>
+    <div class="tabs" id="tabs">
+      <div class="tab"><a href="../index.html">Inicio</a></div>
+      <div class="tab ">
+        <a href="../professor/index.html">Profesores</a>
+      </div>
+      <div class="tab selected"><a href="../students/index.html">Estudiantes</a></div>
+      <div class="tab"><a href="../courses/index.html">Cursos</a></div>
+      <div class="tab"><a href="../group/index.html">Grupos</a></div>
+    </div>
+    <main>
+      <div class="select-h2">
+        <h2>Registro de Prefesores</h2>
+      </div>
+      <div class="form-container" id="form-container">
+        <div class="input-container" id="div-data-id" style="display: ''">
+            <label for="name">Data ID</label>
+            <input type="text" id="id" readonly/>
+          </div>
+        <div class="input-container" id="div-id" style="display: ''">
+          <label for="name">Identificacion</label>
+          <input type="text" id="identification" />
+        </div>
+        <div class="input-container" id="div-email" style="display: ''">
+          <label for="name">Correo</label>
+          <input type="text" id="email" />
+        </div>
+        <div class="input-container" id="div-first-name" style="display: ''">
+          <label for="name">Primer Nombre</label>
+          <input type="text" id="first-name" />
+        </div>
+        <div class="input-container" id="div-second-name" style="display: ''">
+          <label for="name">Segundo Nombre</label>
+          <input type="text" id="second-name" />
+        </div>
+        <div class="input-container" id="div-last-name" style="display: ''">
+          <label for="name">Primer Apellido</label>
+          <input type="text" id="last-name" />
+        </div>
+        <div
+          class="input-container"
+          id="div-second-last-name"
+          style="display: ''"
+        >
+          <label for="name">Segundo Apellido</label>
+          <input type="text" id="second-last-name" />
+        </div>
+        <div
+          class="input-container"
+          id="div-level-group"
+          style="display: ''"
+        >
+        <label for="name">Grado</label>
+          <select id="levelGroup" >
+        </select>
+        </div>
+        <div id="btn1" style="display: inherit">
+          <button id="btn-submit" onclick="updateStudent(myParam)">Enviar</button>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div>
+        <svg id="footer-logo" viewBox="0 0 331 335">
+          <path
+            d="M330.472 335 165.263.553.054 335h330.418ZM215.344 139.568l88.306 178.765H26.876l88.306-178.765h100.162Zm-91.929-16.667h83.696l-41.848-84.716-41.848 84.716Z"
+          />
+        </svg>
+        <span>Sierra Nevada Education</span>
+      </div>
+      &copy; 2021
+    </footer>
+    <script src="./js/index.js"></script>
+    <script src="../../student/js/sticky.js"></script>
+    <script src="../../js/toggleTheme.js"></script>
+    <script src="../../student/js/dropdown.js"></script>
+
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const myParam = urlParams.get('id');
+      const url = 'https://61cd1a30198df60017aec2d4.mockapi.io/api/v1/student';
+
+      console.log(myParam);
+
+      fetch(url + "/" + myParam)
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+          document.getElementById("id").value = data.id;
+          document.getElementById("identification").value = data.identification;
+          document.getElementById("email").value = data.email;
+          document.getElementById("first-name").value = data.firstName;
+          document.getElementById("second-name").value = data.secondName;
+          document.getElementById("last-name").value = data.lastName;
+          document.getElementById("second-last-name").value = data.secondLastName;
+          document.getElementById("levelGroup").value = data.levelGroup;
+        });
+    </script>
+    <script src="../../js/accessDenied.js"></script>
+    <script>
+      window.onload = function () {
+        accessDenied()
+      }
+
+      function accessDenied() {
+        if (sessionStorage.getItem('user') == null) {
+          window.location.href = '../error.html'
+        }
+      }
+
+      function closeSesion() {
+        sessionStorage.clear();
+        window.location.href = '../../../login.html'
+      }
+      document.getElementById('btnD').innerHTML = sessionStorage.getItem('ussername') + `<svg viewBox="0 0 24 24">
+                <g>
+                  <path
+                    d="M12 16a1 1 0 0 1-.64-.23l-6-5a1 1 0 1 1 1.28-1.54L12 13.71l5.36-4.32a1 1 0 0 1 1.41.15 1 1 0 0 1-.14 1.46l-6 4.83A1 1 0 0 1 12 16z"
+                  />
+                </g>
+              </svg>`;
+    </script>
+  </body>
+</html>

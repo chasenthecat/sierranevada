@@ -1,9 +1,9 @@
-.dropdown {
+.dropdownn {
   float: left;
   overflow: hidden;
 }
 
-.dropdown .dropbtn {
+.dropdownn .dropbtn {
   cursor: pointer;
   font-size: 16px;
   border: none;
@@ -50,8 +50,31 @@
   display: block;
 }
 
-#theme-toggler {
+button#theme-toggler {
   display: flex;
   align-items: center;
-  gap: 5px;
+  padding: 5px;
+  margin: 0 0 0 0;
+}
+.dark-img{
+  margin: 5px;
+}
+
+.dropdown-content a:hover,
+.dropdown-content button#theme-toggler:hover {
+  background: var(--hover);
+  border-radius: 10px;
+}
+
+.dropdownn-salir{
+  background-color: transparent;
+  padding: 0px;
+  margin: 0px;
+  box-shadow: none;
+  width: 100%;
+}
+
+.dropdownn-salir:hover{
+  background: var(--hover);
+  border-radius: 10px;
 }

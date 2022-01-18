@@ -87,12 +87,8 @@
     </header>
     <div class="tabs" id="tabs">
       <div class="tab"><a href="../index.html">Inicio</a></div>
-      <div class="tab selected">
-        <a href="../professor/index.html">Profesores</a>
-      </div>
+      <div class="tab selected"><a href="../activities/index.html">Actividades</a></div>
       <div class="tab"><a href="../students/index.html">Estudiantes</a></div>
-      <div class="tab"><a href="../courses/index.html">Cursos</a></div>
-      <div class="tab"><a href="../group/index.html">Grupos</a></div>
     </div>
     <main>
       <div class="select-h2">
@@ -106,13 +102,13 @@
           onChange="formOnChange(this)"
         >
           <option value="crear" selected>Crear</option>
-          <option value="eliminar">Listar</option>
+          <option value="listar">Listar</option>
         </select>
       </div>
       <form class="form-container">
-        <div class="mb-3">
+        <div class="mb-3" style="display: ''" id="div-actividad">
           <label for="actividad" class="form-label">Descripción de la actividad</label>
-          <textarea class="form-control" id="actividad" rows="3"></textarea>
+          <textarea class="form-control" id="actividad" rows="3" ></textarea>
         </div>
         <div class="input-container" id="div-level-group" style="display: ''">
           <label for="name" >Grupo</label>
@@ -126,20 +122,20 @@
           <button id="btn-submit" type="submit">Enviar</button>
         </div>
       </form>
-      <!-- <div id="data" style="display: none">
+      <div id="data" style="display: none">
         <div class="table-container">
           <table class="table">
             <thead>
               <tr>
-                <th>Identificacion</th>
-                <th>Nombre completo</th>
-                <th>Acciones</th>
+                <th>Description</th>
+                <th>Materia</th>
+                <th>Grupo</th>
               </tr>
             </thead>
             <tbody id="list"></tbody>
           </table>
         </div>
-      </div> -->
+      </div>
     </main>
     <footer>
       <div>

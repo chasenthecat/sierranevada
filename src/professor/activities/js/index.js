@@ -1,3 +1,43 @@
+
+function formOnChange(select) {
+    if (select.value == 'crear') {
+
+        divActivity = document.getElementById('div-actividad')
+        divActivity.style.display = ''
+
+        divLevelGroup = document.getElementById('div-level-group')
+        divLevelGroup.style.display = ''
+
+        divMaterial = document.getElementById('div-materia')
+        divMaterial.style.display = ''
+
+        divBtn1 = document.getElementById('btn1')
+        divBtn1.style.display = ''
+
+        divData = document.getElementById('data')
+        divData.style.display = 'none'
+
+    } else {
+        divActivity = document.getElementById('div-actividad')
+        divActivity.style.display = 'none'
+
+        divLevelGroup = document.getElementById('div-level-group')
+        divLevelGroup.style.display = 'none'
+
+        divMaterial = document.getElementById('div-materia')
+        divMaterial.style.display = 'none'
+
+        divBtn1 = document.getElementById('btn1')
+        divBtn1.style.display = 'none'
+
+        divData = document.getElementById('data')
+        divData.style.display = ''
+
+        listActivity(link_activity)
+    }
+}
+
+
 function listGroup() {
     const select = document.getElementById('levelGroup');
     fetch('https://61cd1a30198df60017aec2d4.mockapi.io/api/v1/group')
@@ -17,6 +57,37 @@ function listGroup() {
             }
         });
 }
+const link_activity = 'https://61cd1a30198df60017aec2d4.mockapi.io/api/v1/activity'
+
+function listActivity(link_activity) {
+    const tbody = document.getElementById('list');
+    fetch(link_activity)
+        .then(response => response.json())
+        .then(data => {
+            tbody.innerHTML = '';
+            for (let i = 0; i < data.length; i++) {
+                let fila = tbody.insertRow();
+                fila.insertCell().innerHTML = data[i].descripcion;
+                fila.insertCell().innerHTML = data[i].materia;
+                fila.insertCell().innerHTML = data[i].grupo;
+                fila.insertCell().innerHTML = `
+            <button onclick="goedit(${data[i].id})" type="button">Editar</button> | <button type="button" onclick="deleteActivity(${data[i].id})" >Borrar</button>
+            `;
+            }
+        });
+}
+
+function deleteActivity(id) {
+    fetch(link_activity + `/${id}`, {
+        method: 'DELETE',
+    })
+        .then((response) => {
+            console.log(response.status);
+            if (response.status == 200) {
+                alert('Se ha eliminado correctamente');
+            }
+        })
+}
 
 function listMateria() {
     const select = document.getElementById('pMateria');
@@ -31,14 +102,14 @@ function listMateria() {
                     select.appendChild(option);
                 }
                 let option = document.createElement('option');
-                option.value = data[i].id;
+                option.value = data[i].title;
                 option.innerHTML = data[i].title;
                 select.appendChild(option);
             }
         });
 }
 
-const formActividad ={
+const formActividad = {
     descripcion: document.getElementById('actividad'),
     grupo: document.getElementById('levelGroup'),
     materia: document.getElementById('pMateria'),
@@ -47,23 +118,23 @@ const formActividad ={
 
 function validateActivity(args) {
     if (args.descripcion === '') {
-      alert('No puede dejar el campo de identificación vacío')
-      return false
+        alert('No puede dejar el campo de identificación vacío')
+        return false
     }
     if (args.materia === '') {
-      alert('No puede dejar el campo de nombre vacío')
-      return false
+        alert('No puede dejar el campo de nombre vacío')
+        return false
     }
     if (args.grupo === '') {
-      alert('No puede dejar el campo de apellido vacío')
-      return false
+        alert('No puede dejar el campo de apellido vacío')
+        return false
     }
     if (args.idprofesor === '') {
-      alert('No puede dejar el campo de correo vacío')
-      return false
+        alert('No puede dejar el campo de correo vacío')
+        return false
     }
     return true
-  }
+}
 
 async function addActivity() {
 
@@ -77,13 +148,13 @@ async function addActivity() {
     try {
         if (!validateActivity(data)) {
             throw new Error('Corrige los datos.')
-        } else{
+        } else {
             const body = JSON.stringify(data)
             response = await fetch('https://61cd1a30198df60017aec2d4.mockapi.io/api/v1/activity', {
                 method: 'POST',
                 headers: {
-                  Accept: 'application/json, text/plain, */*',
-                  'Content-Type': 'application/json',
+                    Accept: 'application/json, text/plain, */*',
+                    'Content-Type': 'application/json',
                 },
                 body,
             })
@@ -101,4 +172,4 @@ async function addActivity() {
 document.getElementById('btn-submit').addEventListener('click', async (e) => {
     e.preventDefault()
     await addActivity()
-  })
+})

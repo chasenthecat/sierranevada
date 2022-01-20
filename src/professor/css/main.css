@@ -1,0 +1,48 @@
+main{
+    display: block;
+}
+
+.select-h2{
+    display: flex;
+}
+.h2{
+    width: max-content;
+}
+button{
+    margin-top:auto;
+}
+.form-container{
+
+    margin-top: 20px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.input-container{
+    display: inline-block;
+    margin-top:20px;
+    max-width: 350px;
+    width:330px
+}
+input, select{
+    max-width: 300px;
+    background: var(--input-bg)
+}
+
+option{
+    color: var(--gray-900);
+}
+
+.select-content{
+    background-color: var(--button-bg);
+    color: var(--gray-900);
+    max-width: max-content;
+    margin: 0  0 0 20px ;
+    height: 30px;
+    border-radius: 20px;
+    font-size: 15px;
+    padding: 3px;
+}
+#data_students{
+    margin-top: 72px;
+}

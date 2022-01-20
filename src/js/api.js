@@ -40,6 +40,7 @@ form.submit.addEventListener('click', async (e) => {
       sessionStorage['user'] = identification.value
       sessionStorage['rol'] = rol.value
       sessionStorage['ussername'] = [user.firstName, user.lastName].join(' ')
+      sessionStorage['group'] = user.levelGroup ? user.levelGroup : ''
     } else {
       alert('Error Password or Username')
     }

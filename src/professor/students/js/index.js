@@ -74,7 +74,7 @@ let link_students = 'https://61cd1a30198df60017aec2d4.mockapi.io/api/v1/student'
 
 function getStudentbyGroup(group) {
    let group_id = group;
-   console.log(link_students + `?levelGroup=${group_id}`);
+   console.log(link_students + `?levelGroup=divActivity`);
     const t_body = document.getElementById('list_students');
     fetch(link_students + `?levelGroup=${group_id}`)
         .then(response => response.json())

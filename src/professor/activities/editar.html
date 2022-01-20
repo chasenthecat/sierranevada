@@ -111,7 +111,9 @@
         </div>
         <div class="input-container" id="div-level-group" style="display: ''">
           <label for="name">Grupo</label>
-          <select id="levelGroup"></select>
+          <select id="levelGroup">
+            <option value="">Selecciona un grupo</option>
+          </select>
         </div>
         <div class="input-container" id="div-materia" style="display: ''">
           <label for="pMateria">Materia</label>
@@ -138,7 +140,7 @@
     <script src="../../student/js/sticky.js"></script>
     <script src="../../js/toggleTheme.js"></script>
     <script src="../../student/js/dropdown.js"></script>
-    <script src="../../js/accessDenied.js"></script>
+    <script src="./js/index.js"></script>
     <script>
       const urlParams = new URLSearchParams(window.location.search)
       const myParam = urlParams.get('id')
@@ -162,33 +164,6 @@
           document.getElementById('levelGroup').value = data.grupo
           document.getElementById('pMateria').value = data.materia
         })
-    </script>
-    <script>
-      window.onload = function () {
-        accessDenied()
-        listGroup()
-        listMateria()
-      }
-
-      function accessDenied() {
-        if (sessionStorage.getItem('user') == null) {
-          window.location.href = '../error.html'
-        }
-      }
-
-      function closeSesion() {
-        sessionStorage.clear()
-        window.location.href = '../../login.html'
-      }
-      document.getElementById('btnD').innerHTML =
-        sessionStorage.getItem('ussername') +
-        `<svg viewBox="0 0 24 24">
-                <g>
-                  <path
-                    d="M12 16a1 1 0 0 1-.64-.23l-6-5a1 1 0 1 1 1.28-1.54L12 13.71l5.36-4.32a1 1 0 0 1 1.41.15 1 1 0 0 1-.14 1.46l-6 4.83A1 1 0 0 1 12 16z"
-                  />
-                </g>
-              </svg>`
     </script>
   </body>
 </html>

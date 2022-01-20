@@ -87,7 +87,9 @@
     </header>
     <div class="tabs" id="tabs">
       <div class="tab"><a href="../index.html">Inicio</a></div>
-      <div class="tab selected"><a href="../activities/index.html">Actividades</a></div>
+      <div class="tab selected">
+        <a href="../activities/index.html">Actividades</a>
+      </div>
       <div class="tab"><a href="../students/index.html">Estudiantes</a></div>
     </div>
     <main>
@@ -105,18 +107,22 @@
           <option value="listar">Listar</option>
         </select>
       </div>
-      <form class="form-container">
+      <form class="form-container" id="form" style="display: inherit">
         <div class="mb-3" style="display: ''" id="div-actividad">
-          <label for="actividad" class="form-label">Descripción de la actividad</label>
-          <textarea class="form-control" id="actividad" rows="3" ></textarea>
+          <label for="actividad" class="form-label"
+            >Descripción de la actividad</label
+          >
+          <textarea class="form-control" id="actividad" rows="3"></textarea>
         </div>
         <div class="input-container" id="div-level-group" style="display: ''">
-          <label for="name" >Grupo</label>
-          <select id="levelGroup"></select>
+          <label for="name">Grupo</label>
+          <select id="levelGroup">
+            <option value="">Selecciona un grupo</option>
+          </select>
         </div>
         <div class="input-container" id="div-materia" style="display: ''">
-          <label for="pMateria" >Materia</label>
-          <select id="pMateria"></select>
+          <label for="pMateria">Materia</label>
+          <select id="pMateria" style="display: block"></select>
         </div>
         <div id="btn1" style="display: inherit">
           <button id="btn-submit" type="submit">Enviar</button>
@@ -148,37 +154,9 @@
       </div>
       &copy; 2021
     </footer>
-    <script src="./js/index.js"></script>
     <script src="../../student/js/sticky.js"></script>
     <script src="../../js/toggleTheme.js"></script>
     <script src="../../student/js/dropdown.js"></script>
-    <script src="../../js/accessDenied.js"></script>
-    <script>
-       window.onload = function () {
-        accessDenied();
-        listGroup();
-        listMateria();
-      }
-
-      function accessDenied() {
-        if (sessionStorage.getItem('user') == null) {
-          window.location.href = '../error.html'
-        }
-      }
-
-      function closeSesion() {
-        sessionStorage.clear()
-        window.location.href = '../../login.html'
-      }
-      document.getElementById('btnD').innerHTML =
-        sessionStorage.getItem('ussername') +
-        `<svg viewBox="0 0 24 24">
-                <g>
-                  <path
-                    d="M12 16a1 1 0 0 1-.64-.23l-6-5a1 1 0 1 1 1.28-1.54L12 13.71l5.36-4.32a1 1 0 0 1 1.41.15 1 1 0 0 1-.14 1.46l-6 4.83A1 1 0 0 1 12 16z"
-                  />
-                </g>
-              </svg>`
-    </script>
+    <script src="./js/index.js"></script>
   </body>
 </html>

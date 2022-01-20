@@ -1,60 +1,76 @@
-function formOnChange(select) {
-  if (select.value == 'crear') {
-    divActivity = document.getElementById('div-actividad')
-    divActivity.style.display = ''
+const API_URL = 'https://61cd1a30198df60017aec2d4.mockapi.io/api/v1/'
 
-    divLevelGroup = document.getElementById('div-level-group')
-    divLevelGroup.style.display = ''
+window.onload = async () => {
+  accessDenied()
 
-    divMaterial = document.getElementById('div-materia')
-    divMaterial.style.display = ''
+  let selectedGroup
 
-    divBtn1 = document.getElementById('btn1')
-    divBtn1.style.display = ''
+  const selectGroupElement = document.getElementById('levelGroup')
 
-    divData = document.getElementById('data')
-    divData.style.display = 'none'
-  } else {
-    divActivity = document.getElementById('div-actividad')
-    divActivity.style.display = 'none'
+  const selectCourseElement = document.getElementById('pMateria')
 
-    divLevelGroup = document.getElementById('div-level-group')
-    divLevelGroup.style.display = 'none'
+  const groups = await fetch(API_URL + 'group').then((response) =>
+    response.json()
+  )
 
-    divMaterial = document.getElementById('div-materia')
-    divMaterial.style.display = 'none'
+  groups.forEach((group) => {
+    const { level } = group
+    const option = document.createElement('option')
+    option.value = level
+    option.innerHTML = level
+    selectGroupElement.appendChild(option)
+  })
 
-    divBtn1 = document.getElementById('btn1')
-    divBtn1.style.display = 'none'
+  selectGroupElement.addEventListener('change', async (e) => {
+    selectedGroup = e.target.value
+    selectCourseElement.innerHTML =
+      '<option value="">Selecciona una materia</option>'
+    const courses = await fetch(
+      API_URL + `course?levelGroup=${selectedGroup}`
+    ).then((response) => response.json())
 
-    divData = document.getElementById('data')
-    divData.style.display = ''
+    courses.forEach((course) => {
+      const { title } = course
+      const option = document.createElement('option')
+      option.value = title
+      option.innerHTML = title
+      selectCourseElement.appendChild(option)
+    })
+  })
+}
 
-    listActivity(link_activity)
+function accessDenied() {
+  if (sessionStorage.getItem('user') == null) {
+    window.location.href = '../error.html'
   }
 }
 
-function listGroup() {
-  const select = document.getElementById('levelGroup')
-  fetch('https://61cd1a30198df60017aec2d4.mockapi.io/api/v1/group')
-    .then((response) => response.json())
-    .then((data) => {
-      for (let i = 0; i < data.length; i++) {
-        if (i == 0) {
-          let option = document.createElement('option')
-          option.value = ''
-          option.innerHTML = 'Seleccionar un Grupo'
-          select.appendChild(option)
-        }
-        let option = document.createElement('option')
-        option.value = data[i].level
-        option.innerHTML = data[i].level
-        select.appendChild(option)
-      }
-    })
+function closeSesion() {
+  sessionStorage.clear()
+  window.location.href = '../../login.html'
 }
-const link_activity =
-  'https://61cd1a30198df60017aec2d4.mockapi.io/api/v1/activity'
+document.getElementById('btnD').innerHTML =
+  sessionStorage.getItem('ussername') +
+  `<svg viewBox="0 0 24 24">
+                <g>
+                  <path
+                    d="M12 16a1 1 0 0 1-.64-.23l-6-5a1 1 0 1 1 1.28-1.54L12 13.71l5.36-4.32a1 1 0 0 1 1.41.15 1 1 0 0 1-.14 1.46l-6 4.83A1 1 0 0 1 12 16z"
+                  />
+                </g>
+              </svg>`
+
+function formOnChange(select) {
+  const form = document.getElementById('form')
+  const data = document.getElementById('data')
+  if (select.value == 'crear') {
+    form.style.display = 'block'
+    data.style.display = 'none'
+  } else {
+    form.style.display = 'none'
+    data.style.display = 'block'
+    listActivity(API_URL + 'activity')
+  }
+}
 
 function listActivity(link_activity) {
   const tbody = document.getElementById('list')
@@ -75,7 +91,7 @@ function listActivity(link_activity) {
 }
 
 function deleteActivity(id) {
-  fetch(link_activity + `/${id}`, {
+  fetch(API_URL + `activity/${id}`, {
     method: 'DELETE',
   }).then((response) => {
     console.log(response.status)
@@ -83,26 +99,6 @@ function deleteActivity(id) {
       alert('Se ha eliminado correctamente')
     }
   })
-}
-
-function listMateria() {
-  const select = document.getElementById('pMateria')
-  fetch('https://61cd1a30198df60017aec2d4.mockapi.io/api/v1/course')
-    .then((response) => response.json())
-    .then((data) => {
-      for (let i = 0; i < data.length; i++) {
-        if (i == 0) {
-          let option = document.createElement('option')
-          option.value = ''
-          option.innerHTML = 'Seleccionar un Materia'
-          select.appendChild(option)
-        }
-        let option = document.createElement('option')
-        option.value = data[i].title
-        option.innerHTML = data[i].title
-        select.appendChild(option)
-      }
-    })
 }
 
 const formActividad = {
@@ -176,22 +172,18 @@ function goedit(id) {
 }
 
 function updateActivity(id) {
-  console.log(id)
-  fetch(
-    'https://61cd1a30198df60017aec2d4.mockapi.io/api/v1/activity' + `/${id}`,
-    {
-      method: 'PUT',
-      headers: {
-        Accept: 'application/json, text/plain, */*',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        descripcion: formActividad.descripcion.value,
-        grupo: formActividad.grupo.value,
-        materia: formActividad.materia.value,
-      }),
-    }
-  )
+  fetch(API_URL + `activity/${id}`, {
+    method: 'PUT',
+    headers: {
+      Accept: 'application/json, text/plain, */*',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      descripcion: formActividad.descripcion.value,
+      grupo: formActividad.grupo.value,
+      materia: formActividad.materia.value,
+    }),
+  })
     .then((response) => {
       if (response.status == 200) {
         alert('Se ha actualizado correctamente')

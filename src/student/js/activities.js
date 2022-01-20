@@ -26,8 +26,6 @@ async function listActivities(link_activity) {
 
   const group = sessionStorage.getItem('group')
 
-  console.log(response)
-
   const activitiesByGroup = response.filter(
     (activity) => activity.grupo === group
   )

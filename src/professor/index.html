@@ -53,15 +53,13 @@
         </a>
         <div id="user">
           <div class="dropdownn">
-            <button class="dropbtn" onclick="toggleDropdown()" id="btnD">
-              
-            </button>
+            <button class="dropbtn" id="btnD"></button>
             <div class="dropdown-content" id="myDropdown">
               <button id="theme-toggler">
                 Modo oscuro
                 <div class="dark-img"></div>
               </button>
-                <button class="dropdownn-salir" onclick="closeSesion()">Salir</button>
+              <button id="logout" class="dropdownn-salir">Salir</button>
             </div>
           </div>
         </div>
@@ -94,29 +92,6 @@
     <script src="../student/js/sticky.js"></script>
     <script src="../js/toggleTheme.js"></script>
     <script src="../student/js/dropdown.js"></script>
-    <script>
-      window.onload = function () {
-        accessDenied()
-      }
-
-      function accessDenied() {
-        if (sessionStorage.getItem('user') == null) {
-          window.location.href = './error.html'
-        }
-      }
-
-      function closeSesion() {
-        sessionStorage.clear();
-        window.location.href = '../login.html'
-      }
-
-      document.getElementById('btnD').innerHTML = sessionStorage.getItem('ussername') + `<svg viewBox="0 0 24 24">
-                <g>
-                  <path
-                    d="M12 16a1 1 0 0 1-.64-.23l-6-5a1 1 0 1 1 1.28-1.54L12 13.71l5.36-4.32a1 1 0 0 1 1.41.15 1 1 0 0 1-.14 1.46l-6 4.83A1 1 0 0 1 12 16z"
-                  />
-                </g>
-              </svg>`;
-    </script>
+    <script src="../js/handleSession.js"></script>
   </body>
 </html>

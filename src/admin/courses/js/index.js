@@ -12,8 +12,15 @@ function formOnChange(select) {
 
         divData = document.getElementById('data');
         divData.style.display = "none";
+
+        divLevelGroup = document.getElementById('div-level-group')
+        divLevelGroup.style.display = "";
+
+        divMateria = document.getElementById('div-materia')
+        divMateria.style.display = "";
     }
     else {
+
         divTitle = document.getElementById('div-title');
         divTitle.style.display = "none";
 
@@ -25,6 +32,12 @@ function formOnChange(select) {
 
         divData = document.getElementById('data');
         divData.style.display = "";
+
+        divLevelGroup = document.getElementById('div-level-group')
+        divLevelGroup.style.display = "none";
+        
+        divMateria = document.getElementById('div-materia')
+        divMateria.style.display = "none";
 
         listCourses(link_courses);
     }

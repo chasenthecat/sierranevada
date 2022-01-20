@@ -51,7 +51,7 @@ function addGroup() {
 
     })
         .then((response) => {
-            if (response.status == 200) {
+            if (response.status == 201) {
                 alert('Se ha creado correctamente');
                 window.location.href = "index.html";
             }
@@ -76,7 +76,7 @@ function updateGroup(id) {
     })
         .then(
             (response) => {
-                if (response.status == 200) {
+                if (response.status == 201) {
                     alert('Se ha editado correctamente');
                     window.location.href = "index.html";
                 }
@@ -109,7 +109,7 @@ function deleteGroup(id) {
     })
         .then(
             (response) => {
-                if (response.status == 200) {
+                if (response.status == 201) {
                     alert('Se ha eliminado correctamente');
                     window.location.href = "index.html";
                 }

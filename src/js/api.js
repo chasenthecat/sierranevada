@@ -15,6 +15,9 @@ let button = form.submit.addEventListener('click', (e) => {
     }else if (form.rol.value === 'value2') {
         login = 'https://61cd235c198df60017aec2ee.mockapi.io/Professor';
         rol = "./professor/index.html"
+    }else if (form.rol.value === 'value1') {
+        login = 'https://61cd1a30198df60017aec2d4.mockapi.io/api/v1/student';
+        rol = "./student/index.html"
     }
 
     fetch(login, {

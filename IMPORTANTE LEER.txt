@@ -1,6 +1,6 @@
 Instrucciones
 
 1) Iniciar login.html
-2) Seleccionar administrador
-3) Identidad del administrador: 1005627331
-4) Contraseña del administrador: qwerty22
+2) Puede iniciar sesion con el mismo usuario, pero con rol diferente[administrador,profesor, estudiante].
+3) Numero de identificacion: 1005627331
+4) Contraseña: qwerty22 

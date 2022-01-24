@@ -28,8 +28,6 @@ function formOnChange(select) {
     levelForm = document.getElementById('div-level-group');
     levelForm.style.display = "";
 
-    levelForm = document.getElementById('div-materia');
-    levelForm.style.display = "";
 
   } else {
     divId = document.getElementById('div-id')
@@ -59,8 +57,6 @@ function formOnChange(select) {
     levelForm = document.getElementById('div-level-group');
     levelForm.style.display = "none";
 
-    levelForm = document.getElementById('div-materia');
-    levelForm.style.display = "none";
     //div-materia
 
     listProfessor(link)
@@ -76,7 +72,6 @@ const formProfessor = {
   lastName: document.getElementById('last-name'),
   secondLastName: document.getElementById('second-last-name'),
   level: document.getElementById('levelGroup'),
-  materia: document.getElementById('pMateria'),
 }
 
 const link = 'https://61cd235c198df60017aec2ee.mockapi.io/Professor'
@@ -119,7 +114,6 @@ async function addProfessor() {
     email: formProfessor.email.value,
     password: formProfessor.id.value,
     levelGroup: formProfessor.level.value,
-    materia: formProfessor.materia.value,
   }
   let response
   try {
@@ -167,7 +161,6 @@ function updateProfessor(id) {
       email: formProfessor.email.value,
       password: formProfessor.id.value,
       levelGroup: formProfessor.level.value,
-      materia: formProfessor.materia.value,
     }),
   })
     .then((response) => {
@@ -239,25 +232,6 @@ function listGroup() {
       });
 }
 
-function listMateria() {
-  const select = document.getElementById('pMateria');
-  fetch('https://61cd1a30198df60017aec2d4.mockapi.io/api/v1/course')
-      .then(response => response.json())
-      .then(data => {
-          for (let i = 0; i < data.length; i++) {
-              if (i == 0) {
-                  let option = document.createElement('option');
-                  option.value = '';
-                  option.innerHTML = 'Seleccionar un Materia';
-                  select.appendChild(option);
-              }
-              let option = document.createElement('option');
-              option.value = data[i].id;
-              option.innerHTML = data[i].title;
-              select.appendChild(option);
-          }
-      });
-}
 
 function goedit(id) {
   window.location.href = 'editar.html?id=' + id

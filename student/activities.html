@@ -54,23 +54,13 @@
         </a>
         <div id="user">
           <div class="dropdownn">
-            <button class="dropbtn" onclick="toggleDropdown()">
-              flipper
-              <svg viewBox="0 0 24 24">
-                <g>
-                  <path
-                    d="M12 16a1 1 0 0 1-.64-.23l-6-5a1 1 0 1 1 1.28-1.54L12 13.71l5.36-4.32a1 1 0 0 1 1.41.15 1 1 0 0 1-.14 1.46l-6 4.83A1 1 0 0 1 12 16z"
-                  />
-                </g>
-              </svg>
-            </button>
-
+            <button class="dropbtn" id="btnD"></button>
             <div class="dropdown-content" id="myDropdown">
               <button id="theme-toggler">
                 Modo oscuro
                 <div class="dark-img"></div>
               </button>
-              <a href="#">Salir</a>
+              <button id="logout" class="dropdownn-salir">Salir</button>
             </div>
           </div>
         </div>
@@ -94,34 +84,10 @@
       <section>
         <div class="flex">
           <h2>Actividades pendientes</h2>
-          <span class="circle">4</span>
+          <span class="circle" id="number_activities">0</span>
         </div>
-        <h3 style="margin-top: 16px">26 de noviembre</h3>
-        <section class="card">
-          <h3><a href="#">Cálculo diferencial</a></h3>
-          <p>Plazo hasta: <em>11:59 p.m.</em></p>
-          <p>Tipo: <em>Entrega</em></p>
-          <p>Asignatura: <em>1</em></p>
-        </section>
-        <section class="card">
-          <h3><a href="#">Movimiento Rectilíneo Uniforme</a></h3>
-          <p>Plazo hasta: <em>11:59 p.m.</em></p>
-          <p>Tipo: <em>Entrega</em></p>
-          <p>Asignatura: <em>1</em></p>
-        </section>
-        <h3>27 de noviembre</h3>
-        <section class="card">
-          <h3><a href="#">The Phrasal Verbs</a></h3>
-          <p>Plazo hasta: <em>11:59 p.m.</em></p>
-          <p>Tipo: <em>Entrega</em></p>
-          <p>Asignatura: <em>1</em></p>
-        </section>
-        <section class="card">
-          <h3><a href="#">Pienso, luego existo</a></h3>
-          <p>Plazo hasta: <em>11:59 p.m.</em></p>
-          <p>Tipo: <em>Entrega</em></p>
-          <p>Asignatura: <em>1</em></p>
-        </section>
+        <h3 style="margin-top: 16px" id="date"></h3>
+        <div id="activities"></div>
       </section>
     </main>
     <footer>
@@ -138,5 +104,7 @@
     <script src="./js/sticky.js"></script>
     <script src="../js/toggleTheme.js"></script>
     <script src="./js/dropdown.js"></script>
+    <script src="../js/handleSession.js"></script>
+    <script src="./js/activities.js"></script>
   </body>
 </html>

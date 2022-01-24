@@ -50,7 +50,7 @@
     <link rel="stylesheet" href="../../student/css/style.css" />
     <link rel="stylesheet" href="../../student/css/responsive.css" />
     <link rel="stylesheet" href="../../css/dropdown.css" />
-    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../../admin/css/main.css" />
   </head>
   <body>
     <header>
@@ -88,78 +88,42 @@
     <div class="tabs" id="tabs">
       <div class="tab"><a href="../index.html">Inicio</a></div>
       <div class="tab selected">
-        <a href="../professor/index.html">Profesores</a>
+        <a href="../activities/index.html">Actividades</a>
       </div>
       <div class="tab"><a href="../students/index.html">Estudiantes</a></div>
-      <div class="tab"><a href="../courses/index.html">Cursos</a></div>
-      <div class="tab"><a href="../group/index.html">Grupos</a></div>
     </div>
     <main>
       <div class="select-h2">
         <div class="h2">
-          <h2>Registro de Prefesores</h2>
+          <h2>Registro de Actividades</h2>
         </div>
-        <select
-          name="select"
-          class="select-content"
-          id="form-selector"
-          onChange="formOnChange(this)"
-        >
-          <option value="crear" selected>Crear</option>
-          <option value="eliminar">Listar</option>
-        </select>
       </div>
       <form class="form-container">
-        <div class="input-container" id="div-id" style="display: ''">
-          <label for="name">Identificacion</label>
-          <input type="text" id="identification" required />
+        <div class="input-container" id="div-data-id" style="display: ''">
+          <label for="name">Data ID</label>
+          <input type="text" id="id" readonly />
         </div>
-        <div class="input-container" id="div-email" style="display: ''">
-          <label for="name">Correo</label>
-          <input type="text" id="email" required />
-        </div>
-        <div class="input-container" id="div-first-name" style="display: ''">
-          <label for="name">Primer Nombre</label>
-          <input type="text" id="first-name" required />
-        </div>
-        <div class="input-container" id="div-second-name" style="display: ''">
-          <label for="name">Segundo Nombre</label>
-          <input type="text" id="second-name" />
-        </div>
-        <div class="input-container" id="div-last-name" style="display: ''">
-          <label for="name">Primer Apellido</label>
-          <input type="text" id="last-name" required />
-        </div>
-        <div
-          class="input-container"
-          id="div-second-last-name"
-          style="display: ''"
-        >
-          <label for="name">Segundo Apellido</label>
-          <input type="text" id="second-last-name" required />
+        <div class="mb-3" style="display: ''" id="div-actividad">
+          <label for="actividad" class="form-label"
+            >Descripción de la actividad</label
+          >
+          <textarea class="form-control" id="actividad" rows="3"></textarea>
         </div>
         <div class="input-container" id="div-level-group" style="display: ''">
-          <label for="name" >Grupo</label>
-          <select id="levelGroup"></select>
+          <label for="name">Grupo</label>
+          <select id="levelGroup">
+            <option value="">Selecciona un grupo</option>
+          </select>
+        </div>
+        <div class="input-container" id="div-materia" style="display: ''">
+          <label for="pMateria">Materia</label>
+          <select id="pMateria"></select>
         </div>
         <div id="btn1" style="display: inherit">
-          <button id="btn-submit" type="submit">Enviar</button>
+          <button id="btn-update">Enviar</button>
         </div>
+        <button id="btn-submit" style="display: none"></button>
       </form>
-      <div id="data" style="display: none">
-        <div class="table-container">
-          <table class="table">
-            <thead>
-              <tr>
-                <th>Identificacion</th>
-                <th>Nombre completo</th>
-                <th>Acciones</th>
-              </tr>
-            </thead>
-            <tbody id="list"></tbody>
-          </table>
-        </div>
-      </div>
     </main>
     <footer>
       <div>
@@ -176,32 +140,30 @@
     <script src="../../student/js/sticky.js"></script>
     <script src="../../js/toggleTheme.js"></script>
     <script src="../../student/js/dropdown.js"></script>
-    <script src="../../js/accessDenied.js"></script>
+    <script src="./js/index.js"></script>
     <script>
-      window.onload = function () {
-        accessDenied();
-        listGroup();
-      }
+      const urlParams = new URLSearchParams(window.location.search)
+      const myParam = urlParams.get('id')
+      const url = 'https://61cd1a30198df60017aec2d4.mockapi.io/api/v1/activity'
 
-      function accessDenied() {
-        if (sessionStorage.getItem('user') == null) {
-          window.location.href = '../error.html'
-        }
-      }
+      console.log(myParam)
 
-      function closeSesion() {
-        sessionStorage.clear()
-        window.location.href = '../../login.html'
-      }
-      document.getElementById('btnD').innerHTML =
-        sessionStorage.getItem('ussername') +
-        `<svg viewBox="0 0 24 24">
-                <g>
-                  <path
-                    d="M12 16a1 1 0 0 1-.64-.23l-6-5a1 1 0 1 1 1.28-1.54L12 13.71l5.36-4.32a1 1 0 0 1 1.41.15 1 1 0 0 1-.14 1.46l-6 4.83A1 1 0 0 1 12 16z"
-                  />
-                </g>
-              </svg>`
+      document
+        .getElementById('btn-update')
+        .addEventListener('click', async (e) => {
+          e.preventDefault()
+          await updateActivity(myParam)
+        })
+
+      fetch(url + '/' + myParam)
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data)
+          document.getElementById('id').value = data.id
+          document.getElementById('actividad').value = data.descripcion
+          document.getElementById('levelGroup').value = data.grupo
+          document.getElementById('pMateria').value = data.materia
+        })
     </script>
   </body>
 </html>

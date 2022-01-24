@@ -54,22 +54,13 @@
         </a>
         <div id="user">
           <div class="dropdownn">
-            <button class="dropbtn" onclick="toggleDropdown()">
-              flipper
-              <svg viewBox="0 0 24 24">
-                <g>
-                  <path
-                    d="M12 16a1 1 0 0 1-.64-.23l-6-5a1 1 0 1 1 1.28-1.54L12 13.71l5.36-4.32a1 1 0 0 1 1.41.15 1 1 0 0 1-.14 1.46l-6 4.83A1 1 0 0 1 12 16z"
-                  />
-                </g>
-              </svg>
-            </button>
+            <button class="dropbtn" id="btnD"></button>
             <div class="dropdown-content" id="myDropdown">
               <button id="theme-toggler">
                 Modo oscuro
                 <div class="dark-img"></div>
               </button>
-              <a href="#">Salir</a>
+              <button id="logout" class="dropdownn-salir">Salir</button>
             </div>
           </div>
         </div>
@@ -90,18 +81,20 @@
     <main>
       <section>
         <h2>Tus asignaturas</h2>
-        <section class="card">
-          <h3><a href="#">Física -></a></h3>
-          <p>Horario: <em>07:00 a.m. - 09:00 a.m.</em></p>
-          <p>Profesor: <em>Albert Einstein</em></p>
-          <p>Actividades pendientes: <em>1</em></p>
-        </section>
-        <section class="card">
-          <h3><a href="#">Matemáticas -></a></h3>
-          <p>Horario: <em>10:00 a.m. - 12:00 p.m.</em></p>
-          <p>Profesor: <em>Euclides</em></p>
-          <p>Actividades pendientes: <em>1</em></p>
-        </section>
+        <div id="courses">
+          <!-- <section class="card"> -->
+          <!--   <h3><a href="#">Física -></a></h3> -->
+          <!--   <p>Horario: <em>07:00 a.m. - 09:00 a.m.</em></p> -->
+          <!--   <p>Profesor: <em>Albert Einstein</em></p> -->
+          <!--   <p>Actividades pendientes: <em>1</em></p> -->
+          <!-- </section> -->
+          <!-- <section class="card"> -->
+          <!--   <h3><a href="#">Matemáticas -></a></h3> -->
+          <!--   <p>Horario: <em>10:00 a.m. - 12:00 p.m.</em></p> -->
+          <!--   <p>Profesor: <em>Euclides</em></p> -->
+          <!--   <p>Actividades pendientes: <em>1</em></p> -->
+          <!-- </section> -->
+        </div>
         <a href="">Ver todos -></a>
       </section>
       <section>
@@ -110,46 +103,14 @@
           <a class="button" id="create-event" href="#">Crear evento</a>
         </div>
         <section id="calendar">
-          <h2>Noviembre 2021</h2>
-          <ul>
+          <ul id="calendar-days">
+            <li><b>Do</b></li>
             <li><b>Lu</b></li>
             <li><b>Ma</b></li>
             <li><b>Mi</b></li>
             <li><b>Ju</b></li>
             <li><b>Vi</b></li>
             <li><b>Sa</b></li>
-            <li><b>Do</b></li>
-            <li></li>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-            <li>5</li>
-            <li>6</li>
-            <li>7</li>
-            <li>8</li>
-            <li>9</li>
-            <li>10</li>
-            <li>11</li>
-            <li>12</li>
-            <li>13</li>
-            <li>14</li>
-            <li>15</li>
-            <li>16</li>
-            <li>17</li>
-            <li>18</li>
-            <li>19</li>
-            <li>20</li>
-            <li>21</li>
-            <li>22</li>
-            <li class="active">23</li>
-            <li>24</li>
-            <li>25</li>
-            <li>26</li>
-            <li>27</li>
-            <li>28</li>
-            <li>29</li>
-            <li>30</li>
           </ul>
         </section>
       </section>
@@ -168,5 +129,8 @@
     <script src="./js/sticky.js"></script>
     <script src="../js/toggleTheme.js"></script>
     <script src="./js/dropdown.js"></script>
+    <script src="../js/handleSession.js"></script>
+    <script src="./js/calendar.js"></script>
+    <script src="./js/fetchCourses.js"></script>
   </body>
 </html>

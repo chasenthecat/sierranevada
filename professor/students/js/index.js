@@ -1,34 +1,4 @@
-function formOnChange(select) {
-    if (select.value == 'crear') {
-        divId = document.getElementById('div-level');
-        divId.style.display = "";
 
-        btn = document.getElementById('btn1');
-        btn.style.display = "";
-
-        table = document.getElementById('data');
-        table.style.display = "none";
-
-        table2 = document.getElementById('data_students');
-        table2.style.display = "none";
-
-    }
-    else {
-        divId = document.getElementById('div-level');
-        divId.style.display = "none";
-
-        btn = document.getElementById('btn1');
-        btn.style.display = "none";
-
-        table = document.getElementById('data');
-        table.style.display = "";
-
-        table2 = document.getElementById('data_students');
-        table2.style.display = "";
-
-        listGroup(link_group);
-    }
-}
 
 const formGroup = {
     data_id: document.getElementById('id'),
@@ -36,31 +6,7 @@ const formGroup = {
 };
 
 
-const link_group = 'https://61cd1a30198df60017aec2d4.mockapi.io/api/v1/group';
 
-function addGroup() {
-    fetch(link_group, {
-        method: 'POST',
-        headers: {
-            Accept: "application/json, text/plain, */*",
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-            level: formGroup.level.value,
-        }),
-
-    })
-        .then((response) => {
-            if (response.status == 201) {
-                alert('Se ha creado correctamente');
-                window.location.href = "index.html";
-            }
-        })
-        .catch((err) => {
-            console.log(err);
-            alert('Error al crear el estudiante');
-        });
-}
 
 function updateGroup(id) {
 
@@ -76,7 +22,7 @@ function updateGroup(id) {
     })
         .then(
             (response) => {
-                if (response.status == 201) {
+                if (response.status == 200) {
                     alert('Se ha editado correctamente');
                     window.location.href = "index.html";
                 }
@@ -109,7 +55,7 @@ function deleteGroup(id) {
     })
         .then(
             (response) => {
-                if (response.status == 201) {
+                if (response.status == 200) {
                     alert('Se ha eliminado correctamente');
                     window.location.href = "index.html";
                 }
@@ -124,13 +70,13 @@ function goedit(id) {
     window.location.href = "editar.html?id=" + id;
 }
 
-let link_student = 'https://61cd1a30198df60017aec2d4.mockapi.io/api/v1/student';
+let link_students = 'https://61cd1a30198df60017aec2d4.mockapi.io/api/v1/student';
 
 function getStudentbyGroup(group) {
    let group_id = group;
-   console.log(link_student + `?levelGroup=${group_id}`);
+   console.log(link_students + `?levelGroup=divActivity`);
     const t_body = document.getElementById('list_students');
-    fetch(link_student + `?levelGroup=${group_id}`)
+    fetch(link_students + `?levelGroup=${group_id}`)
         .then(response => response.json())
         .then(data => {
              console.log(data);
